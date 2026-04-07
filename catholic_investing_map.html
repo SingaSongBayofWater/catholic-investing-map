@@ -666,8 +666,7 @@ function renderPanel(org){
   let h='';
   h+=`<div class="p-cat" style="color:${cat.color}">${cat.label}</div>`;
   h+=`<div class="p-name">${org.name}</div>`;
-  if(meta)h+=`<div class="p-meta">${meta}</div>`;
-  if(org.priority)h+=`<span class="pri-badge ${priClass[org.priority]}">${priLabel[org.priority]}</span>`;
+  if(meta)h+=`<div class="p-meta">${meta}</div>`;  
   h+=`<div class="crs-banner ${crs.status}"><span class="crs-icon">${crsIcon}</span><div><strong>${crsLabel}</strong>${crs.note}</div></div>`;
   h+=`<div class="p-desc">${org.description}</div>`;
 
