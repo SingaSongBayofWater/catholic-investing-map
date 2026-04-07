@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catholic Impact Investing — Overview</title>
+<style>
+  :root {
+    --bg:#f7f6f2; --surface:#fff; --border:#e2e0d8;
+    --text:#1c1c1a; --text2:#52524e; --text3:#8a8a84;
+    --green:#1D9E75; --green-bg:#E1F5EE; --green-border:#9FE1CB;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:hidden;display:flex;flex-direction:column;}
+
+  #topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  #topbar h1{font-size:14px;font-weight:600;white-space:nowrap;}
+  #version-badge{font-size:10px;color:var(--text3);background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:2px 7px;white-space:nowrap;flex-shrink:0;}
+  .view-tabs{display:flex;gap:4px;margin-left:auto;}
+  .view-tab{font-size:11px;padding:3px 10px;border-radius:20px;border:1.5px solid var(--border);cursor:pointer;background:var(--bg);color:var(--text3);font-weight:500;text-decoration:none;white-space:nowrap;transition:all .12s;display:flex;align-items:center;gap:4px;}
+  .view-tab.active{background:var(--text);color:#fff;border-color:var(--text);}
+  .view-tab:hover:not(.active){border-color:#aaa;color:var(--text2);}
+  #about-btn{font-size:11px;padding:3px 10px;border-radius:20px;border:1.5px solid var(--border);cursor:pointer;background:var(--bg);color:var(--text3);font-weight:500;white-space:nowrap;transition:all .12s;}
+  #about-btn:hover{border-color:#aaa;color:var(--text2);}
+
+  #main{flex:1;display:flex;overflow:hidden;}
+  #canvas{position:relative;overflow:hidden;flex:1;min-width:0;background:var(--bg);}
+  svg#overview{width:100%;height:100%;display:block;}
+
+  #panel{background:var(--surface);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;width:320px;flex-shrink:0;}
+  #panel-content{flex:1;overflow-y:auto;padding:24px 20px 32px;}
+  #panel-empty{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;color:var(--text3);font-size:13px;line-height:1.7;}
+
+  .p-cat-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:4px;padding:3px 8px;margin-bottom:10px;}
+  .p-name{font-size:18px;font-weight:700;line-height:1.2;margin-bottom:8px;}
+  .p-desc{font-size:13px;line-height:1.75;color:var(--text2);margin-bottom:14px;}
+  .p-role{font-size:12px;line-height:1.6;color:var(--text3);border-left:3px solid #ddd;padding-left:10px;margin-bottom:14px;}
+  .p-section{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin:14px 0 7px;}
+  .org-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;border-radius:20px;padding:4px 11px;margin:0 4px 5px 0;border:1.5px solid transparent;cursor:default;}
+  .count-badge{font-size:11px;color:var(--text3);margin-bottom:12px;}
+  .det-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--green);border:1px solid var(--green-border);border-radius:5px;padding:5px 12px;text-decoration:none;transition:background .12s;margin-top:8px;}
+  .det-link:hover{background:var(--green-bg);}
+
+  #tip{position:absolute;background:rgba(28,28,26,.88);color:#fff;font-size:12px;padding:5px 10px;border-radius:6px;pointer-events:none;opacity:0;transition:opacity .1s;z-index:50;white-space:nowrap;}
+
+  .cat-group{cursor:pointer;}
+  .cat-bubble{transition:filter .15s;}
+  .cat-group:hover .cat-bubble{filter:brightness(.92);}
+  .cat-group.selected .cat-bubble{filter:brightness(.86);}
+  .cat-link{stroke:#ccc9be;stroke-width:1.5;stroke-dasharray:5 4;opacity:.45;fill:none;}
+  .crs-ring{fill:none;stroke:#1D9E75;stroke-width:2;stroke-dasharray:6 3;opacity:.55;}
+  .org-inner:hover circle{filter:brightness(.80);}
+
+  #modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:100;display:none;align-items:center;justify-content:center;}
+  #modal-overlay.open{display:flex;}
+  #modal{background:var(--surface);border-radius:12px;padding:32px 36px;max-width:520px;width:90%;max-height:80vh;overflow-y:auto;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.18);}
+  #modal h2{font-size:17px;font-weight:700;margin-bottom:5px;}
+  #modal .modal-sub{font-size:12px;color:var(--text3);margin-bottom:20px;}
+  #modal p{font-size:13px;line-height:1.75;color:var(--text2);margin-bottom:13px;}
+  #modal-close{position:absolute;top:16px;right:18px;font-size:18px;cursor:pointer;color:var(--text3);line-height:1;}
+  #modal-close:hover{color:var(--text);}
+  .modal-built{font-size:11px;color:var(--text3);margin-top:18px;padding-top:13px;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <h1>Catholic Impact Investing Ecosystem</h1>
+  <span id="version-badge">v0.14 · Apr 2026</span>
+  <button id="about-btn">? About</button>
+  <div class="view-tabs">
+    <a class="view-tab active" href="index.html">⬡ Overview</a>
+    <a class="view-tab" href="catholic_investing_map.html">⚬ Detailed map</a>
+  </div>
+</div>
+
+<div id="main">
+  <div id="canvas">
+    <svg id="overview"></svg>
+    <div id="tip"></div>
+  </div>
+  <div id="panel">
+    <div id="panel-empty">
+      <div>
+        <div style="font-size:28px;margin-bottom:12px">⬡</div>
+        <strong style="font-size:14px;color:var(--text2)">Catholic Impact Investing</strong><br><br>
+        Click any cluster to learn what it does and see example organizations.<br><br>
+        <span style="font-size:11px;color:var(--text3)">Then open the <strong>Detailed map</strong><br>to explore all organizations individually.</span>
+      </div>
+    </div>
+    <div id="panel-content" style="display:none"></div>
+  </div>
+</div>
+
+<div id="modal-overlay">
+  <div id="modal">
+    <span id="modal-close">&#x2715;</span>
+    <h2>Catholic Impact Investing Ecosystem Map</h2>
+    <div class="modal-sub">An orientation guide to who's who and how they connect.</div>
+    <p>This map is an orientation guide to the Catholic impact investing ecosystem in the United States. It shows the organizations, investment vehicles, and key networks where Catholic values and capital markets intersect &mdash; from the women religious congregations that pioneered shareholder engagement in the 1970s, to the CDFIs and fund managers deploying capital into affordable housing, clean energy, and community development today.</p>
+    <p>I built this to prepare for my role on the Innovative Finance team at Catholic Relief Services. CRS appears as the anchor node for that reason &mdash; it&rsquo;s the lens I used to decide what to include. The map is designed to be useful to anyone trying to orient themselves in this space.</p>
+    <p>Use the <strong>Overview</strong> to understand how the field is organized. Use the <strong>Detailed map</strong> to explore specific organizations, their connections, and how they relate to each other.</p>
+    <p>This is a living document, updated as the field evolves. Suggestions welcome.</p>
+    <div class="modal-built">Built with Claude (Anthropic) · <a href="https://docs.google.com/document/d/1XoKIFDGC--L1pi-JVoBOa7Abxsiz8aIM-CYyXVrGnDQ/edit?usp=sharing" target="_blank" style="color:var(--text3)">Background reading →</a></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+let D;
+
+const CAT_DESCRIPTIONS = {
+  'anchor': {
+    summary: 'Home base for this map. CRS is the official international humanitarian agency of the US Catholic bishops, operating in 100+ countries.',
+    role: 'The lens through which this ecosystem is explored: which organizations are most relevant to CRS Innovative Finance work?'
+  },
+  'field-builder': {
+    summary: 'Organizations that build the Catholic impact investing field itself &mdash; setting standards, convening investors, providing formation and education, and creating shared infrastructure.',
+    role: 'The connective tissue of the ecosystem. They don\'t deploy capital directly, but they enable everyone else to do so with more Catholic intentionality.'
+  },
+  'capital': {
+    summary: 'Organizations that deploy or intermediate capital into impact-generating investments &mdash; CDFIs, fund managers, development finance institutions, and foundations.',
+    role: 'The "doing" layer: these organizations move money from Catholic investors toward projects that serve people and planet.'
+  },
+  'investment-mgmt': {
+    summary: 'Firms and teams that manage Catholic-aligned investment portfolios &mdash; from health system treasury offices to dedicated Catholic ESG funds.',
+    role: 'Day-to-day investment managers for congregations and institutions. They apply Catholic values screens and impact mandates to portfolio construction.'
+  },
+  'congregation': {
+    summary: 'Women religious congregations and other Catholic institutions that are active impact investors &mdash; primarily as LPs in impact funds or through direct CDFI relationships.',
+    role: 'The bedrock of the movement. Sisters were early pioneers of shareholder engagement and community investing, beginning decades before "impact investing" had a name.'
+  },
+  'endowment': {
+    summary: 'Catholic university and institutional endowments applying Catholic values to their investment portfolios.',
+    role: 'Large pools of patient capital increasingly integrating Catholic social teaching into investment policy. Notre Dame\'s endowment (~$15B) is a bellwether for the space.'
+  },
+  'ecosystem': {
+    summary: 'Broader impact investing infrastructure that Catholic investors actively use &mdash; standards bodies, CDFI networks, and mainstream impact firms.',
+    role: 'Context layer: not Catholic-specific, but setting the standards and providing infrastructure the whole field operates within.'
+  }
+};
+
+const CAT_SHOWCASES = {
+  'field-builder':   ['ciic','francesco','iccr','faithdriveninvestor'],
+  'capital':         ['rcif','azure','calvert','leviticus','charism'],
+  'investment-mgmt': ['mercy','cbis','dominican-climate','commonspirit','ascension'],
+  'congregation':    ['fsm','adriandominican','maryknoll-sisters','sinsinawa-dominican','caldwell-dominican'],
+  'endowment':       ['notre-dame','georgetown','boston-college','loyola-chicago'],
+  'ecosystem':       ['giin','ofn']
+};
+
+/* Bubble sizes — grown to give inner dots more room */
+const CAT_POSITIONS = {
+  'anchor':          {fx:0.50, fy:0.50, r:50},
+  'field-builder':   {fx:0.24, fy:0.22, r:115},
+  'capital':         {fx:0.21, fy:0.72, r:112},
+  'investment-mgmt': {fx:0.73, fy:0.68, r:112},
+  'congregation':    {fx:0.54, fy:0.81, r:105},
+  'endowment':       {fx:0.78, fy:0.20, r:98},
+  'ecosystem':       {fx:0.52, fy:0.12, r:76}
+};
+
+/* CAT_LINKS computed at runtime from actual connection data in build() */
+
+const tip = document.getElementById('tip');
+function showTip(e, text){ tip.textContent=text; tip.style.opacity=1; moveTip(e); }
+function moveTip(e){ const c=document.getElementById('canvas').getBoundingClientRect(); tip.style.left=(e.clientX-c.left+12)+'px'; tip.style.top=(e.clientY-c.top-28)+'px'; }
+function hideTip(){ tip.style.opacity=0; }
+
+document.getElementById('about-btn').addEventListener('click',()=>document.getElementById('modal-overlay').classList.add('open'));
+document.getElementById('modal-close').addEventListener('click',()=>document.getElementById('modal-overlay').classList.remove('open'));
+document.getElementById('modal-overlay').addEventListener('click',e=>{ if(e.target===document.getElementById('modal-overlay')) document.getElementById('modal-overlay').classList.remove('open'); });
+
+async function init(){
+  try{
+    const r=await fetch('catholic_investing_data.json');
+    if(!r.ok) throw new Error();
+    D=await r.json();
+    const v=D.meta?.version, d=D.meta?.lastUpdated;
+    if(v&&d){ const [yr,mo]=d.split('-'); const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; document.getElementById('version-badge').textContent=`v${v} · ${months[+mo-1]} ${yr}`; }
+  } catch{
+    document.getElementById('panel-empty').innerHTML='<div style="color:#993C1D;font-size:13px;line-height:1.7"><strong>JSON not found.</strong><br>Serve via <code>python -m http.server 8000</code></div>';
+    return;
+  }
+  build();
+}
+
+let selectedCat=null;
+
+function build(){
+  const wrap=document.getElementById('canvas');
+  const W=wrap.clientWidth, H=wrap.clientHeight;
+  const svg=d3.select('#overview');
+  svg.selectAll('*').remove();
+  svg.on('click',()=>selectCat(null));
+
+  const byId=Object.fromEntries(D.organizations.map(o=>[o.id,o]));
+  const cats=D.categories;
+
+  const pos={};
+  Object.entries(CAT_POSITIONS).forEach(([cat,p])=>{ pos[cat]={x:p.fx*W, y:p.fy*H, r:p.r}; });
+
+  /* ── Compute category-level links from actual connection data ── */
+  const orgCat=Object.fromEntries(D.organizations.map(o=>[o.id,o.category]));
+  const catPairCounts={};
+  D.connections.forEach(c=>{
+    const fc=orgCat[c.from], tc=orgCat[c.to];
+    if(!fc||!tc||fc===tc) return;
+    const key=[fc,tc].sort().join('||');
+    catPairCounts[key]=(catPairCounts[key]||0)+1;
+  });
+
+  /* Connection lines — weight by count */
+  const gL=svg.append('g');
+  Object.entries(catPairCounts).forEach(([key,count])=>{
+    const [a,b]=key.split('||');
+    if(!pos[a]||!pos[b]) return;
+    gL.append('line').attr('class','cat-link')
+      .attr('x1',pos[a].x).attr('y1',pos[a].y)
+      .attr('x2',pos[b].x).attr('y2',pos[b].y)
+      .attr('stroke-width', Math.min(1.2+count*0.18, 4))
+      .attr('opacity', Math.min(0.28+count*0.04, 0.68));
+  });
+
+  const gC=svg.append('g');
+
+  /* Seeded deterministic jitter — consistent across redraws */
+  function makeRand(seed){
+    let s=seed;
+    return ()=>{ s=(s*16807)%2147483647; return (s-1)/2147483646; };
+  }
+
+  Object.entries(cats).forEach(([catId,catDef])=>{
+    if(!pos[catId]) return;
+    const {x,y,r}=pos[catId];
+    const isAnchor=catId==='anchor';
+    const orgCount=D.organizations.filter(o=>o.category===catId).length;
+
+    const g=gC.append('g').attr('class','cat-group').attr('data-cat',catId)
+      .on('click',e=>{e.stopPropagation();selectCat(catId);})
+      .on('mouseenter',e=>showTip(e,catDef.label+(isAnchor?'':` · ${orgCount} orgs`)))
+      .on('mousemove',e=>moveTip(e))
+      .on('mouseleave',hideTip);
+
+    g.append('circle').attr('class','cat-bubble')
+      .attr('cx',x).attr('cy',y).attr('r',r)
+      .attr('fill',catDef.bg).attr('stroke',catDef.color)
+      .attr('stroke-width',isAnchor?2.5:2);
+
+    if(isAnchor){
+      g.append('circle').attr('class','crs-ring').attr('cx',x).attr('cy',y).attr('r',r+10);
+    }
+
+    /* Category label — upper third */
+    const labelCY=isAnchor?y:y-r*0.40;
+    const fs=Math.min(13,r*0.14);
+
+    if(isAnchor){
+      g.append('text').attr('x',x).attr('y',labelCY-7).attr('text-anchor','middle').attr('dominant-baseline','middle')
+        .attr('font-size',15).attr('font-weight',700).attr('fill',catDef.text).attr('pointer-events','none').text('CRS');
+      g.append('text').attr('x',x).attr('y',labelCY+10).attr('text-anchor','middle').attr('dominant-baseline','middle')
+        .attr('font-size',10).attr('fill',catDef.text).attr('opacity',.65).attr('pointer-events','none').text('Home base');
+    } else {
+      const words=catDef.label.split(' ');
+      if(words.length<=2){
+        g.append('text').attr('x',x).attr('y',labelCY).attr('text-anchor','middle').attr('dominant-baseline','middle')
+          .attr('font-size',fs).attr('font-weight',700).attr('fill',catDef.text).attr('pointer-events','none').text(catDef.label);
+      } else {
+        const mid=Math.ceil(words.length/2);
+        g.append('text').attr('x',x).attr('y',labelCY-fs*0.7).attr('text-anchor','middle').attr('dominant-baseline','middle')
+          .attr('font-size',fs).attr('font-weight',700).attr('fill',catDef.text).attr('pointer-events','none').text(words.slice(0,mid).join(' '));
+        g.append('text').attr('x',x).attr('y',labelCY+fs*0.7).attr('text-anchor','middle').attr('dominant-baseline','middle')
+          .attr('font-size',fs).attr('font-weight',700).attr('fill',catDef.text).attr('pointer-events','none').text(words.slice(mid).join(' '));
+      }
+      g.append('text').attr('x',x).attr('y',labelCY+(words.length>2?fs*1.8:fs*1.2))
+        .attr('text-anchor','middle').attr('dominant-baseline','middle')
+        .attr('font-size',9).attr('fill',catDef.text).attr('opacity',.6).attr('pointer-events','none')
+        .text(`${orgCount} orgs`);
+    }
+
+    /* ── Inner org dots — arc base + jitter ── */
+    if(!isAnchor && CAT_SHOWCASES[catId]){
+      const orgIds=CAT_SHOWCASES[catId];
+      const n=orgIds.length;
+      /* Push cluster center down enough that stars above meet-dots stay inside bubble */
+      const clusterCY=y+r*0.26;
+      const dotR=11, meetDotR=15;
+      const jitterAmt=r*0.08; /* gentler jitter — less overlap */
+      const seed=catId.split('').reduce((a,c)=>a+c.charCodeAt(0),0);
+      const rand=makeRand(seed);
+
+      /* Smarter label truncation — prefer recognizable short forms */
+      function smartLabel(org){
+        const s=org.shortName||org.name;
+        /* If it already fits, use it */
+        if(s.length<=9) return s;
+        /* Try splitting on space and using first word if short enough */
+        const first=s.split(' ')[0];
+        if(first.length<=9) return first;
+        return s.slice(0,8)+'…';
+      }
+
+      orgIds.forEach((oid,i)=>{
+        const org=byId[oid];
+        if(!org) return;
+        const isMeet=org.priority==='meet';
+        const isEco=org.ecosystemNode;
+        const dr=isMeet?meetDotR:dotR;
+
+        /* Base arc position — wider spread to reduce overlap */
+        let bx,by;
+        if(n===1){ bx=x; by=clusterCY; }
+        else {
+          const spread=Math.min(Math.PI*0.82,(n-1)*0.44);
+          const angle=(-spread/2)+(i/(n-1))*spread;
+          bx=x+Math.sin(angle)*r*0.72;
+          by=clusterCY-Math.cos(angle)*r*0.14+Math.abs(Math.sin(angle))*r*0.08;
+        }
+        const sx=bx+(rand()-0.5)*2*jitterAmt;
+        const sy=by+(rand()-0.5)*2*jitterAmt;
+
+        const og=g.append('g').attr('class','org-inner')
+          .on('mouseenter',e=>{e.stopPropagation();showTip(e,org.shortName||org.name);})
+          .on('mousemove',e=>moveTip(e))
+          .on('mouseleave',hideTip)
+          .on('click',e=>{e.stopPropagation();selectCat(catId);});
+
+        /* Star above dot — only if dot is far enough from top of bubble */
+        const distFromTop=sy-dr-(y-r);
+        if(isMeet && distFromTop>14){
+          og.append('text')
+            .attr('x',sx).attr('y',sy-dr-2)
+            .attr('text-anchor','middle').attr('dominant-baseline','auto')
+            .attr('font-size',9).attr('fill',catDef.color).attr('pointer-events','none')
+            .text('★');
+        }
+
+        og.append('circle')
+          .attr('cx',sx).attr('cy',sy).attr('r',dr)
+          .attr('fill',isEco?'#f0f0ee':catDef.bg)
+          .attr('stroke',catDef.color)
+          .attr('stroke-width',isMeet?2:1.2);
+
+        /* Name inside dot */
+        og.append('text')
+          .attr('x',sx).attr('y',sy)
+          .attr('text-anchor','middle').attr('dominant-baseline','middle')
+          .attr('font-size',isMeet?8:7.5).attr('fill',catDef.text)
+          .attr('font-weight',isMeet?600:400)
+          .attr('pointer-events','none')
+          .text(smartLabel(org));
+      });
+    }
+  });
+}
+
+function selectCat(catId){
+  selectedCat=catId;
+  d3.selectAll('.cat-group').classed('selected',false);
+  if(catId) d3.selectAll('.cat-group').filter(function(){return this.getAttribute('data-cat')===catId;}).classed('selected',true);
+
+  const empty=document.getElementById('panel-empty');
+  const content=document.getElementById('panel-content');
+  if(!catId){ empty.style.display='flex'; content.style.display='none'; return; }
+
+  empty.style.display='none';
+  content.style.display='block';
+
+  const catDef=D.categories[catId];
+  const desc=CAT_DESCRIPTIONS[catId];
+  const orgs=D.organizations.filter(o=>o.category===catId);
+  const meetOrgs=orgs.filter(o=>o.priority==='meet');
+  const otherOrgs=orgs.filter(o=>o.priority!=='meet');
+
+  let html=`
+    <div class="p-cat-badge" style="background:${catDef.bg};color:${catDef.text}">${catDef.label}</div>
+    <div class="p-name">${catId==='anchor'?'Catholic Relief Services':catDef.label}</div>
+    <div class="p-desc">${desc.summary}</div>
+    <div class="p-role" style="border-left-color:${catDef.color}">${desc.role}</div>
+  `;
+
+  if(catId!=='anchor') html+=`<div class="count-badge">${orgs.length} organization${orgs.length!==1?'s':''} in this cluster</div>`;
+
+  if(meetOrgs.length){
+    html+=`<div class="p-section">Example organizations</div>`;
+    meetOrgs.forEach(o=>{ html+=`<span class="org-pill" style="background:${catDef.bg};color:${catDef.text};border-color:${catDef.color}">&#9733; ${o.shortName||o.name}</span>`; });
+  }
+  if(otherOrgs.length){
+    html+=`<div class="p-section">${meetOrgs.length?'Others':'Organizations'}</div>`;
+    otherOrgs.forEach(o=>{ html+=`<span class="org-pill" style="background:${catDef.bg};color:${catDef.text};border-color:${catDef.color}30">${o.shortName||o.name}</span>`; });
+  }
+
+  html+=`<div style="margin-top:20px"><a class="det-link" href="catholic_investing_map.html">Open detailed map &rarr;</a></div>`;
+  content.innerHTML=html;
+}
+
+window.addEventListener('resize',()=>{ if(D) build(); });
+init();
+</script>
+</body>
+</html>

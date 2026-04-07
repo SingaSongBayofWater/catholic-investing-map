@@ -1,0 +1,2337 @@
+{
+  "meta": {
+    "title": "Catholic Impact Investing Ecosystem",
+    "description": "Organizations, investment vehicles, and key people in the US Catholic impact investing landscape",
+    "lastUpdated": "2026-04-06",
+    "version": "0.15"
+  },
+  "changelog": [
+    {
+      "version": "0.15",
+      "date": "2026-04-06",
+      "notes": "Source hygiene, description review, connection audit. Added website sources to 7 meet-priority orgs (CRS, CIIC, Francesco, FDI, IDB Lab, DFC, Total Impact). Fixed RCIF source 1 label (was Mercy IS, is RCIF MIE listing). Trimmed internal language from Charism notes. Cleaned first-person/internal language from 4 crsConnection notes (CRS, Calvert, Mercy IS, RCIF). Removed 2 connections: LCWR->CIIC (inferred, not verified) and CRS->Morgan Stanley (unverified)."
+    },
+    {
+      "version": "0.14",
+      "date": "2026-04-06",
+      "notes": "Full category-by-category review. Field-builder: removed stale Mission Driven Finance reference from Francesco description; fixed FDI URL typo; set LCWR focus to null. Ecosystem: set GIIN focus to null. Investment-mgmt, endowment, congregation: no changes needed. Added Dee Walsh as person entry (Mercy Housing) with LinkedIn."
+    },
+    {
+      "version": "0.13",
+      "date": "2026-04-06",
+      "notes": "HTML fix: clicking 'All' filter now resets node selection and panel in addition to category filter. JSON updates: Ascension description clarified with six-investment detail and source. CommonSpirit recategorized from congregation to investment-mgmt; description updated with CIP history (30+ years, $263M portfolio) and Dignity Health heritage note. Trinity Health added as new investment-mgmt org with Community Investing Program. Mercy Housing added as new capital org (CDFI affiliate Mercy Community Capital). Mercy IS description updated with 1984 NHCLF historical note. San Rafael Dominican description updated with Sr. Patricia Bruno / NorCal Loan Fund note."
+    },
+    {
+      "version": "0.12",
+      "date": "2026-04-05",
+      "notes": "Merged session changes onto v0.11 base. FaithInvest priority null. Added Faith Driven Investor stub (field-builder, meet). Fixed Reuben Coulter orgs. Added FaithInvest-FDI connection. Preserved v0.11 category fixes: Mercy IS->investment-mgmt, DFC/IDB Lab->capital, Impact Assets->investment-mgmt, ecosystemNode flags on Calvert/DF Impact/Osprey/Stone/Total Impact."
+    },
+    {
+      "version": "0.11",
+      "date": "2026-04-05",
+      "notes": "People priority cleanup: set Scott Malpass, Sr. Pat Daly, Sr. Elise Garcia to null (their associated orgs are null priority). Sr. Corinne Florek remains meet."
+    },
+    {
+      "version": "0.10",
+      "date": "2026-04-05",
+      "notes": "Priority refinement: nulled GIIN, Morgan Stanley, CIS. Added FaithInvest to meet. Set Reuben Coulter and Felipe Witchger people priority to meet. meet orgs now: CRS, CIIC, Francesco, Mercy IS, RCIF, FSM, Azure, IDB Lab, DFC, Total Impact, FaithInvest."
+    },
+    {
+      "version": "0.9",
+      "date": "2026-04-05",
+      "notes": "Priority cleanup: all monitor orgs set to null. Cut CBIS, KoC, Georgetown, Loyola Chicago, CUA from meet to null. meet now contains 13 orgs: CRS, CIIC, GIIN, Francesco, Morgan Stanley, Mercy IS, RCIF, CIS, FSM, Azure, IDB Lab, DFC, Total Impact Capital."
+    },
+    {
+      "version": "0.8",
+      "date": "2026-04-04",
+      "notes": "Noted pending HTML items: source links on connections (schema change deferred). Directional arrows implemented."
+    },
+    {
+      "version": "0.7",
+      "date": "2026-04-04",
+      "notes": "Capital category review. Downgraded Calvert and Charism to monitor (warm connections already exist). Removed ThirdWay Capital (not Catholic-specific, thin connection). Removed Mission Driven Finance (not Catholic-specific). Removed Opportunity Resource Fund (split from Leviticus; cleaned Leviticus description). Clarified Stone Family Foundation and Osprey Foundation as non-Catholic WASH-focused investors. Added Felipe Witchger as person (Francesco Co-Founder & Executive Director; Livable Future Impact). Added Felipe to Francesco keyPeople."
+    },
+    {
+      "version": "0.6",
+      "date": "2026-04-04",
+      "notes": "Renamed priority values: learn/research → monitor. Added Azure Source Capital org + fund. Added Azure investors as orgs: IDB Lab, DFC, Total Impact Capital, Stone Family Foundation, Osprey Foundation, Felician Sisters of North America, DF Impact Capital, Impact Assets/Blue Sky. Added Azure connections for all investors. Added DFC and IDB Lab as ecosystem nodes. Added Total Impact Capital to capital category."
+    },
+    {
+      "version": "0.5",
+      "date": "2026-04-04",
+      "notes": "Moved GIIN and OFN to ecosystem category. Fixed CIIC founded year to ~2014. Fixed Reuben Coulter orgs field (faithinvest → faithdriveninvestor note). Downgraded ICCR and IASJ priority to learn/research. Added focus field (grants/public-markets/private-markets) to all orgs. Added CRS anchor node. Added Economy of Francesco, Laudato Si Movement, LCWR stubs. Added LinkedIn URLs to all people records. Pruned 18 weak/inferred connections."
+    },
+    {
+      "version": "0.5",
+      "date": "2026-04-04",
+      "notes": "Retired ciic-pledge node. Retired formation, convening, and investors categories. Added endowment and ecosystem categories. Moved Francesco to field-builder. Added ecosystemNode flag to GIIN and Morgan Stanley. Added ciicPledge field to congregation nodes. Added sources array pattern. Added orgs: FSM, FADICA, Georgetown, Loyola Chicago, Boston College, CUA, Oblate IPIT. Added person: John O'Shaughnessy. Upgraded Ascension crsConnection to direct. Updated FSM→dominican-climate connection to reflect Nov 2024 liquidation. Added 11 new connections."
+    },
+    {
+      "version": "0.4",
+      "date": "2026-04-02",
+      "notes": "Added 7 new organizations: RCIF, Opportunity Finance Network, Catholic Investment Services, Investor Advocates for Social Justice, ThirdWay Capital, Relèven, Mission Driven Finance. Added 1 new fund (RCIF pool). Added 7 new connections."
+    },
+    {
+      "version": "0.3",
+      "date": "2026-04-02",
+      "notes": "Structured keyPeople for person-highlight (Option D). Added priority field to all orgs. Added confidence field to connections. Added connection labels to panel chips."
+    },
+    {
+      "version": "0.2",
+      "date": "2026-04-02",
+      "notes": "Added 16 Dominican congregations. Added crsConnection field. Added missing connections. Merged legend into filter buttons."
+    },
+    {
+      "version": "0.1",
+      "date": "2026-04-02",
+      "notes": "Initial build — 19 organizations, 10 funds, 13 connections."
+    }
+  ],
+  "categories": {
+    "field-builder": {
+      "label": "Field building",
+      "color": "#1D9E75",
+      "bg": "#E1F5EE",
+      "text": "#0F6E56"
+    },
+    "ecosystem": {
+      "label": "Ecosystem context",
+      "color": "#6B9DB8",
+      "bg": "#E8F2F7",
+      "text": "#444441"
+    },
+    "capital": {
+      "label": "Capital deployment",
+      "color": "#EF9F27",
+      "bg": "#FAEEDA",
+      "text": "#854F0B"
+    },
+    "investment-mgmt": {
+      "label": "Investment mgmt",
+      "color": "#378ADD",
+      "bg": "#E6F1FB",
+      "text": "#0C447C"
+    },
+    "congregation": {
+      "label": "Congregations",
+      "color": "#B5714A",
+      "bg": "#F5EAE0",
+      "text": "#7A3D1F"
+    },
+    "endowment": {
+      "label": "Catholic endowments",
+      "color": "#B06AB3",
+      "bg": "#F5EAF7",
+      "text": "#6B3D6E"
+    },
+    "anchor": {
+      "label": "Home base",
+      "color": "#D4537E",
+      "bg": "#FBEAF0",
+      "text": "#72243E"
+    }
+  },
+  "people": [
+    {
+      "id": "felipe-witchger",
+      "name": "Felipe Witchger",
+      "orgs": [
+        "francesco"
+      ],
+      "title": "Co-Founder & Executive Director, Francesco Collaborative; Managing Principal, Livable Future Impact",
+      "linkedIn": "https://www.linkedin.com/in/felipewitchger",
+      "bio": "Co-founded Francesco Collaborative in 2021 and built it into a network helping Catholic institutional investors move from intention to action. Also Co-Director of CIIC (2021-2025). Founded Livable Future Impact (2025) — an advisory and placement firm operating in close partnership with Francesco. Prior: founded Community Purchasing Alliance, redirecting $14M to minority-owned businesses and building 35 solar projects. Series 63 and Series 82 registered representative via Umergence LLC. Has supported allocations of $50M+ to impact-first funds.",
+      "priority": "meet",
+      "linkedin": "https://www.linkedin.com/in/felipe-witchger/",
+      "sources": [
+        {
+          "label": "LinkedIn profile",
+          "url": "https://www.linkedin.com/in/felipe-witchger/"
+        },
+        {
+          "label": "Francesco Collaborative website",
+          "url": "https://www.francescocollaborative.org"
+        }
+      ]
+    },
+    {
+      "id": "elizabeth-garlow",
+      "name": "Elizabeth Garlow",
+      "orgs": [
+        "francesco",
+        "charism"
+      ],
+      "title": "Co-Founder, Francesco Collaborative; Founder, Charism Capital",
+      "linkedIn": "https://www.linkedin.com/in/elizabethgarlow",
+      "bio": "Senior Fellow at New America. Co-designed the Livable Future Investing workshop (200+ alumni). Former Obama White House Policy Advisor. Former Investment Officer at Lumina Foundation. Doctoral degree (honoris causa) from Dominican School of Philosophy & Theology.",
+      "priority": "meet",
+      "linkedin": "https://www.linkedin.com/in/elizabethgarlow/",
+      "sources": [
+        {
+          "label": "LinkedIn profile",
+          "url": "https://www.linkedin.com/in/elizabethgarlow/"
+        },
+        {
+          "label": "Francesco Collaborative / Charism Capital",
+          "url": "https://www.francescocollaborative.org"
+        }
+      ]
+    },
+    {
+      "id": "amanda-joseph",
+      "name": "Amanda Joseph",
+      "orgs": [
+        "giin",
+        "calvert"
+      ],
+      "title": "Director, Investors' Council, GIIN; former Director Faith-Based Initiatives, Calvert Impact",
+      "linkedIn": "https://www.linkedin.com/in/amandabjoseph",
+      "bio": "Deep experience in faith investor organizing, CDFIs, and impact investing. 6 years at Opportunity Finance Network. Earlier co-created TZEDEC, the first national Jewish community investing initiative.",
+      "priority": "meet",
+      "linkedin": "https://www.linkedin.com/in/amandabjoseph/",
+      "sources": [
+        {
+          "label": "LinkedIn profile",
+          "url": "https://www.linkedin.com/in/amandabjoseph/"
+        },
+        {
+          "label": "GIIN staff page",
+          "url": "https://thegiin.org"
+        }
+      ]
+    },
+    {
+      "id": "kayoko-lyons",
+      "name": "Kayoko Lyons, CFA",
+      "orgs": [
+        "cabrini-world"
+      ],
+      "title": "Director of Investments, Cabrini World (Missionaries of Sacred Heart of Jesus)",
+      "linkedIn": "https://www.linkedin.com/in/kayoko-lyons-cfa-35898715",
+      "bio": "CFA with global experience in private debt and equity. Previously MicroVest Capital (Latin America), World Bank, MCE Social Capital. MA from SAIS (Johns Hopkins), BA Economics from UC Berkeley.",
+      "priority": "meet",
+      "linkedin": "https://www.linkedin.com/in/kayoko-lyons-cfa-35898715/",
+      "sources": [
+        {
+          "label": "LinkedIn profile",
+          "url": "https://www.linkedin.com/in/kayoko-lyons-cfa-35898715/"
+        }
+      ]
+    },
+    {
+      "id": "reuben-coulter",
+      "name": "Reuben Coulter",
+      "orgs": [
+        "faithdriveninvestor"
+      ],
+      "title": "Senior Advisor, Faith Driven Investor; Partner, Ignis Global",
+      "linkedIn": "https://www.linkedin.com/in/reubencoulter",
+      "bio": "20+ years in global impact and values-driven capital. Senior Advisor at Faith Driven Investor (evangelical-leaning but interfaith in practice); also advises FaithInvest. Former CEO of Transformational Business Network ($500M+ AUM). Former World Economic Forum Associate Director (Africa strategy). Senior Fellow at Belmont University.",
+      "priority": "meet",
+      "linkedin": "https://www.linkedin.com/in/reubencoulter/",
+      "sources": [
+        {
+          "label": "LinkedIn profile",
+          "url": "https://www.linkedin.com/in/reubencoulter/"
+        },
+        {
+          "label": "FaithInvest website",
+          "url": "https://www.faithinvest.org"
+        }
+      ]
+    },
+    {
+      "id": "sarah-smith",
+      "name": "Sarah B. Smith",
+      "orgs": [
+        "mercy"
+      ],
+      "title": "Director, Mercy Partnership Fund",
+      "bio": "Joined Mercy Investment Services in 2014. Extensive experience in community development, affordable housing, and public-private partnerships. Leads Mercy Partnership Fund.",
+      "priority": "meet",
+      "linkedin": "https://www.linkedin.com/in/sarah-b-smith-37b99934/",
+      "sources": [
+        {
+          "label": "LinkedIn profile",
+          "url": "https://www.linkedin.com/in/sarah-b-smith-37b99934/"
+        },
+        {
+          "label": "Mercy Investment Services website",
+          "url": "https://mercyinvestmentservices.org"
+        }
+      ]
+    },
+    {
+      "id": "sister-corinne-florek",
+      "name": "Sr. Corinne Florek",
+      "orgs": [
+        "mercy"
+      ],
+      "title": "Former Director, Mercy Partnership Fund; Founder, RCIF",
+      "bio": "Founded the Religious Communities Impact Fund (RCIF) in 2008. Former Director of Mercy Partnership Fund. Pioneer in community development investing for religious communities. Recipient of Ned Gramlich Lifetime Achievement Award for Responsible Finance (2010).",
+      "priority": "meet",
+      "sources": [
+        {
+          "label": "RCIF profile — Sr. Corinne Florek",
+          "url": "https://www.rcif.org"
+        },
+        {
+          "label": "OFN Ned Gramlich Award announcement",
+          "url": "https://ofn.org"
+        }
+      ]
+    },
+    {
+      "id": "pat-daly",
+      "name": "Sr. Pat Daly",
+      "orgs": [
+        "caldwell-dominican",
+        "dominican-climate"
+      ],
+      "title": "Caldwell Dominican; Earth Council leader; CSF formation leader",
+      "bio": "Longtime leader in social impact investing and corporate responsibility. Member of the Earth Council of Northeast Dominicans. Played the leading role in forming the Dominican Sisters Climate Solutions Funds.",
+      "priority": null,
+      "sources": [
+        {
+          "label": "NCR: Dominican sisters commit $46M to climate solutions funds",
+          "url": "https://www.ncronline.org/earthbeat/faith/dominican-sisters-commit-46-million-seed-new-climate-solutions-funds"
+        }
+      ]
+    },
+    {
+      "id": "elise-garcia",
+      "name": "Sr. Elise Garcia",
+      "orgs": [
+        "adriandominican",
+        "dominican-climate"
+      ],
+      "title": "Adrian Dominican; former LCWR President-elect; CSF initiative leader",
+      "bio": "Member of the Adrian Dominicans' general council. Former president-elect of the Leadership Conference of Women Religious. Key leader in the Dominican Sisters Climate Solutions Funds.",
+      "priority": null,
+      "sources": [
+        {
+          "label": "NCR: Dominican sisters commit $46M to climate solutions funds",
+          "url": "https://www.ncronline.org/earthbeat/faith/dominican-sisters-commit-46-million-seed-new-climate-solutions-funds"
+        }
+      ]
+    },
+    {
+      "id": "scott-malpass",
+      "name": "Scott Malpass",
+      "orgs": [
+        "notre-dame"
+      ],
+      "title": "Former CIO, University of Notre Dame Endowment (1988-2021)",
+      "bio": "Grew Notre Dame's endowment from $400M to $15B+ while maintaining strict Catholic investment guidelines. Now one of the most cited examples of Catholic values investing not sacrificing returns.",
+      "priority": null,
+      "sources": [
+        {
+          "label": "Notre Dame endowment overview",
+          "url": "https://endowment.nd.edu"
+        },
+        {
+          "label": "Notre Dame News — Malpass retirement",
+          "url": "https://news.nd.edu/news/notre-dame-chief-investment-officer-scott-malpass-to-retire/"
+        }
+      ]
+    },
+    {
+      "id": "dee-walsh",
+      "name": "Dee Walsh",
+      "orgs": [
+        "mercy-housing"
+      ],
+      "title": "EVP and Chief Officer of Strategic Development, Mercy Housing",
+      "bio": "Oversees Mercy Housing's Mercy Loan Fund and four regional offices. Key figure in one of the largest Catholic affordable housing and community lending organizations in the US.",
+      "priority": null,
+      "linkedin": "https://www.linkedin.com/in/dee-walsh-82a87511/",
+      "sources": [
+        {
+          "label": "LinkedIn profile",
+          "url": "https://www.linkedin.com/in/dee-walsh-82a87511/"
+        },
+        {
+          "label": "Nun Funds: The Original Impact Investors — Shelterforce (2018)",
+          "url": "https://shelterforce.org/2018/01/24/nun-funds-original-impact-investors/"
+        }
+      ]
+    },
+    {
+      "id": "john-oshaughnessy",
+      "name": "John O'Shaughnessy",
+      "orgs": [
+        "fsm",
+        "ciic"
+      ],
+      "title": "CIO, Franciscan Sisters of Mary; Co-founder, CIIC",
+      "bio": "Treasurer & CIO of the Franciscan Sisters of Mary since 1992. Co-founded CIIC in 2014. Former Board Member and Treasurer of the Laudato Si' Movement (2017–2023). CPA and former Registered Investment Advisor. BSBA from University of Missouri-St. Louis.",
+      "priority": "meet",
+      "linkedin": "https://www.linkedin.com/in/john-o-shaughnessy-9217419/",
+      "sources": [
+        {
+          "label": "LinkedIn profile",
+          "url": "https://www.linkedin.com/in/john-o-shaughnessy-9217419/"
+        },
+        {
+          "label": "CIIC website",
+          "url": "https://www.ciicimpact.com"
+        }
+      ]
+    }
+  ],
+  "organizations": [
+    {
+      "id": "crs",
+      "name": "Catholic Relief Services",
+      "shortName": "CRS",
+      "category": "anchor",
+      "founded": "1943",
+      "hq": "Baltimore, MD",
+      "description": "Official international humanitarian agency of the US Catholic bishops. Operates in 100+ countries. Innovative Finance team explores blended finance, impact investing, and catalytic capital to advance CRS's development mission.",
+      "url": "https://www.crs.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "CRS is the anchor node for this map."
+      },
+      "priority": "meet",
+      "focus": "private-markets",
+      "notes": "Home base anchor node.",
+      "sources": [
+        {
+          "label": "Catholic Relief Services website",
+          "url": "https://www.crs.org"
+        }
+      ]
+    },
+    {
+      "id": "ciic",
+      "name": "Catholic Impact Investing Collaborative",
+      "shortName": "CIIC",
+      "category": "field-builder",
+      "founded": "~2014",
+      "hq": "US (virtual)",
+      "description": "Network hub for Catholic impact investors, pronounced 'seek'. Funded by women religious. Focuses on community building, mentorship, and formation. Maintains the Catholic Impact Investing Pledge with 25+ signatory congregations.",
+      "url": "https://www.catholicimpact.org",
+      "pledgeUrl": "https://www.catholicimpact.org/catholic-impact-investing-pledge",
+      "keyPeople": [
+        {
+          "id": "john-oshaughnessy",
+          "role": "Co-founder"
+        }
+      ],
+      "crsConnection": {
+        "status": "direct",
+        "note": "CRS is a CIIC Pledge signatory."
+      },
+      "priority": "meet",
+      "notes": "Primary connective tissue for congregations early in their impact investing journey. Volunteer-heavy model.",
+      "focus": "private-markets",
+      "sources": [
+        {
+          "label": "CIIC website",
+          "url": "https://www.catholicimpact.org"
+        }
+      ]
+    },
+    {
+      "id": "iccr",
+      "name": "Interfaith Center on Corporate Responsibility",
+      "shortName": "ICCR",
+      "category": "field-builder",
+      "founded": "1971",
+      "hq": "New York, NY",
+      "description": "Coalition of 300+ faith- and values-driven institutional investors with $4T+ AUM. Founded 1971. Catholic sisters were central to its founding. Leads shareholder engagement on human rights, environment, and social justice.",
+      "url": "https://www.iccr.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "CRS works in the same space; no direct membership confirmed yet."
+      },
+      "priority": null,
+      "notes": "Every serious Catholic investor is a member or works with ICCR members.",
+      "focus": "public-markets"
+    },
+    {
+      "id": "giin",
+      "name": "Global Impact Investing Network",
+      "shortName": "GIIN",
+      "category": "ecosystem",
+      "ecosystemNode": true,
+      "founded": "2009",
+      "hq": "New York, NY",
+      "description": "Leading global field-builder for impact investing. Publishes IRIS+ impact measurement standards and annual investor surveys. Catholic investors are active members.",
+      "url": "https://thegiin.org",
+      "keyPeople": [
+        {
+          "id": "amanda-joseph",
+          "role": "Director, Investors' Council"
+        }
+      ],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "CRS participates in impact investing field; direct GIIN membership unconfirmed."
+      },
+      "priority": null,
+      "notes": "Standard-setting body for the broader impact investing field.",
+      "focus": null
+    },
+    {
+      "id": "faithinvest",
+      "name": "FaithInvest",
+      "shortName": "FaithInvest",
+      "category": "field-builder",
+      "founded": "2019",
+      "hq": "London, UK",
+      "description": "International nonprofit network for faith-based institutional investors. Multi-faith, not exclusively Catholic. Covers Christianity, Islam, Daoism, and others. Hosted Paris Faith-Consistent Investing Forum April 2026 with Vatican Bank.",
+      "url": "https://www.faithinvest.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection. Potential future partner given CRS international presence."
+      },
+      "priority": null,
+      "notes": "The international bridge connecting Catholic investors to a broader interfaith investing movement.",
+      "focus": "private-markets"
+    },
+    {
+      "id": "faithdriveninvestor",
+      "name": "Faith Driven Investor",
+      "shortName": "FDI",
+      "category": "field-builder",
+      "founded": "2019",
+      "hq": "US",
+      "focus": "private-markets",
+      "description": "US-based network for evangelical Christian investors integrating faith into investing decisions. Runs Faith Driven Investor and Faith Driven Entrepreneur communities globally. Evangelical-leaning but interfaith in practice. Reuben Coulter is a Senior Advisor.",
+      "url": "https://www.faithdriveninvestor.org",
+      "keyPeople": [
+        {
+          "id": "reuben-coulter",
+          "role": "Senior Advisor"
+        }
+      ],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct CRS connection. Relevant as context for the broader faith-driven investing movement."
+      },
+      "priority": "meet",
+      "notes": "Reuben Coulter is a Senior Advisor here and a key contact. Evangelical-leaning but increasingly interfaith — overlaps with FaithInvest orbit.",
+      "sources": [
+        {
+          "label": "Faith Driven Investor website",
+          "url": "https://www.faithdriveninvestor.org"
+        }
+      ]
+    },
+    {
+      "id": "usccb",
+      "name": "US Conference of Catholic Bishops",
+      "shortName": "USCCB",
+      "category": "field-builder",
+      "founded": "1966",
+      "hq": "Washington, DC",
+      "description": "The official body of Catholic bishops in the United States. Publishes the USCCB Socially Responsible Investment Guidelines (updated 2021) — the foundational framework for Catholic values investing in the US. Three pillars: Avoid Doing Harm, Promote the Common Good, Actively Work for Change.",
+      "url": "https://www.usccb.org/resources/socially-responsible-investment-guidelines-2021",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "CRS is the official international humanitarian agency of the US Catholic bishops."
+      },
+      "priority": null,
+      "notes": "Sets the standards all other Catholic investing organizations reference. The 2021 guidelines update is the current operating framework.",
+      "focus": "public-markets"
+    },
+    {
+      "id": "francesco",
+      "name": "Francesco Collaborative",
+      "shortName": "Francesco",
+      "category": "field-builder",
+      "founded": "2020",
+      "hq": "US (virtual)",
+      "description": "Formation and spiritual deepening for Catholic investors. Inspired by Pope Francis' Economy of Francesco movement. Flagship program is the Livable Future Investing workshop, with 200+ alumni. Partners with Relèven and FaithInvest.",
+      "url": "https://francescocollaborative.org",
+      "keyPeople": [
+        {
+          "id": "elizabeth-garlow",
+          "role": "Co-Founder"
+        },
+        {
+          "id": "felipe-witchger",
+          "role": "Co-Founder & Executive Director"
+        }
+      ],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "CRS is a CIIC Pledge signatory; CIIC and Francesco are community partners."
+      },
+      "priority": "meet",
+      "notes": "The formation layer that precedes capital deployment decisions.",
+      "focus": "private-markets",
+      "sources": [
+        {
+          "label": "Francesco Collaborative website",
+          "url": "https://francescocollaborative.org"
+        }
+      ]
+    },
+    {
+      "id": "charism",
+      "name": "Charism Capital",
+      "shortName": "Charism",
+      "category": "capital",
+      "founded": "2025 (Q2 2026 launch)",
+      "hq": "US",
+      "description": "Diversified fund of funds for women religious congregations and lay leaders. Min $100K. Seeks solidarity returns — mission impact prioritized over financial performance. Founded by Elizabeth Garlow.",
+      "url": "https://www.charismcapital.org",
+      "keyPeople": [
+        {
+          "id": "elizabeth-garlow",
+          "role": "Founder"
+        }
+      ],
+      "crsConnection": {
+        "status": "none",
+        "note": "Pre-launch. Worth monitoring as a potential CRS partner."
+      },
+      "priority": null,
+      "notes": "Newest and most operationally concrete vehicle. Reduces administrative burden for smaller congregations.",
+      "focus": "private-markets"
+    },
+    {
+      "id": "calvert",
+      "name": "Calvert Impact",
+      "shortName": "Calvert Impact",
+      "category": "capital",
+      "founded": "1988",
+      "hq": "Bethesda, MD",
+      "description": "Nonprofit impact investing firm. Community Investment Note is a primary vehicle for many Catholic congregations. Previously had a dedicated Faith Investor Program 2020-22, led by Amanda Joseph.",
+      "url": "https://calvertimpact.org",
+      "faithUrl": "https://calvertimpact.org/resources/category/faith",
+      "keyPeople": [
+        {
+          "id": "amanda-joseph",
+          "role": "former Director, Faith-Based Initiatives (2020-2022)"
+        }
+      ],
+      "crsConnection": {
+        "status": "direct",
+        "note": "CRS Innovative Finance team has direct familiarity with Calvert's model and programs."
+      },
+      "priority": null,
+      "notes": "Not exclusively Catholic but one of the most important capital vehicles for Catholic congregations.",
+      "focus": "private-markets",
+      "ecosystemNode": true
+    },
+    {
+      "id": "leviticus",
+      "name": "Leviticus Fund",
+      "shortName": "Leviticus",
+      "category": "capital",
+      "founded": "1983",
+      "hq": "New York, NY",
+      "description": "NY-based CDFI focused on affordable housing and community development. A vehicle used by Catholic congregations for private debt impact investing.",
+      "url": "https://www.levfund.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct CRS connection."
+      },
+      "priority": null,
+      "notes": "Represents the private debt / CDFI tier of Catholic investing.",
+      "focus": "private-markets",
+      "sources": [
+        {
+          "label": "Supporter Spotlight: Sisters of Mercy — Leviticus Fund",
+          "url": "https://leviticusfund.org/supporter-spotlight-sisters-of-mercy/"
+        },
+        {
+          "label": "Leviticus Fund leverages faith capital — Global Sisters Report",
+          "url": "https://www.globalsistersreport.org/news/social-justice/news/leviticus-fund-leverages-faith-capital-poverty-fighting-projects"
+        }
+      ]
+    },
+    {
+      "id": "cbis",
+      "name": "Christian Brothers Investment Services",
+      "shortName": "CBIS",
+      "category": "investment-mgmt",
+      "founded": "1981",
+      "hq": "New York, NY",
+      "aum": "$12.8B",
+      "description": "Largest dedicated Catholic investment manager. 13 funds. Combines exclusionary screens with active shareholder engagement (3,000+ proxy votes/year). Sub-advisors include Nuveen, Wellington, T. Rowe Price.",
+      "url": "https://cbisonline.com",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Both serve Catholic institutional space. Worth exploring relationship."
+      },
+      "priority": null,
+      "notes": "The institutional backbone of Catholic SRI. Works closely with ICCR.",
+      "focus": "public-markets"
+    },
+    {
+      "id": "koc",
+      "name": "Knights of Columbus Asset Advisors",
+      "shortName": "KoC AA",
+      "category": "investment-mgmt",
+      "founded": "2014",
+      "hq": "New Haven, CT",
+      "aum": "$29B+",
+      "description": "Largest Catholic asset manager by total AUM. USCCB-screened funds with active engagement and moral theologian oversight. CUA Consortium proxy voting policy adopted by ISS and Glass Lewis for spring 2026.",
+      "url": "https://www.kofcassetadvisors.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Both are major US Catholic institutions. Worth establishing relationship."
+      },
+      "priority": null,
+      "notes": "Growing rapidly. CUA Consortium proxy policy is a major development.",
+      "focus": "public-markets"
+    },
+    {
+      "id": "avemaria",
+      "name": "Ave Maria Funds",
+      "shortName": "Ave Maria",
+      "category": "investment-mgmt",
+      "founded": "2001",
+      "hq": "Ann Arbor, MI",
+      "aum": "$3.8B",
+      "description": "Concentrated portfolios of 30-40 stocks. Most aggressive exclusionary screener — avoids all 7 Magnificent 7 companies. No shareholder engagement. Traditional Catholic values focus.",
+      "url": "https://avemariafunds.com",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "Different philosophical tradition. Exclusion-first, not impact-first. Low priority."
+      },
+      "priority": null,
+      "notes": "Exclusion-first approach. Different world from impact/blended finance.",
+      "focus": "public-markets"
+    },
+    {
+      "id": "brightlight",
+      "name": "Brightlight Impact",
+      "shortName": "Brightlight",
+      "category": "investment-mgmt",
+      "founded": "~2022",
+      "hq": "US",
+      "description": "Faith-led investment advisory firm within EverSource Wealth Advisors. Advisory program, OCIO model, and advisor support. Strong research arm — 2024 paper on faith-based listed markets widely cited.",
+      "url": "https://www.brightlightimpact.us",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known connection. Research output worth following."
+      },
+      "priority": null,
+      "notes": "More commercially structured. Research output is a differentiator.",
+      "focus": "public-markets"
+    },
+    {
+      "id": "ascension",
+      "name": "Ascension Investment Management",
+      "shortName": "Ascension IM",
+      "category": "investment-mgmt",
+      "hq": "US",
+      "description": "Investment manager for Ascension Health (second-largest US Catholic health system) and other faith-based organizations. Offers IPS development, asset allocation, and investment research. CRS made its first impact fund investment through Ascension IM's Impact Strategy in late 2015, deploying assets across six investments over two years: an emerging markets food fund, a technology-focused food and agribusiness fund, a Latin American low/middle-income housing fund, an African renewable energy investment, an emerging markets financial services fund, and an East African healthcare/pharmaceutical investment.",
+      "url": "https://ascensioninvestmentmanagement.com",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "CRS made its first impact fund investment in Ascension Investment Management's Impact Strategy in late 2015."
+      },
+      "priority": null,
+      "notes": "Straightforward institutional management, less visible in impact investing community.",
+      "focus": "private-markets",
+      "sources": [
+        {
+          "label": "Catholic Impact Profile: Ascension — CIIC",
+          "url": "https://www.catholicimpact.org/stories/2017/6/5/catholic-impact-profile-ascension"
+        }
+      ]
+    },
+    {
+      "id": "cath-etf",
+      "name": "CATH ETF (Global X)",
+      "shortName": "CATH ETF",
+      "category": "investment-mgmt",
+      "founded": "2016",
+      "hq": "New York, NY",
+      "aum": "$1.11B",
+      "description": "Passive S&P 500 ETF screened against USCCB guidelines. No shareholder engagement. Most liquid Catholic equity option. Ticker: CATH on NYSE. Global X also launched CHRI (Christian Values) in Sept 2025.",
+      "url": "https://www.globalxetfs.com/funds/cath",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "Retail product. Not a direct partner type for CRS."
+      },
+      "priority": null,
+      "notes": "Lowest-cost, most liquid entry point for Catholic equity investing.",
+      "focus": "public-markets"
+    },
+    {
+      "id": "morgan-stanley",
+      "name": "Morgan Stanley / Graystone",
+      "shortName": "Morgan Stanley",
+      "category": "investment-mgmt",
+      "ecosystemNode": true,
+      "hq": "New York, NY",
+      "description": "Major investment bank significant in Catholic impact investing. Launched first Catholic Values Investing Tool Kit in 2015. Structured the Dominican Sisters Climate Solutions Funds via Graystone Consulting. Co-hosted 2018 Third Vatican Conference on Impact Investing with CRS.",
+      "url": "https://www.morganstanley.com/impactinvesting",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "CRS and Morgan Stanley co-hosted the 2018 Third Vatican Conference on Impact Investing."
+      },
+      "priority": null,
+      "notes": "Important bridge between mainstream finance and Catholic institutional investors.",
+      "focus": "private-markets"
+    },
+    {
+      "id": "mercy",
+      "name": "Mercy Investment Services",
+      "shortName": "Mercy IS",
+      "category": "investment-mgmt",
+      "ciicPledge": {
+        "status": true,
+        "year": 2019
+      },
+      "founded": "2010",
+      "hq": "St. Louis, MO",
+      "description": "Ministry of Sisters of Mercy of the Americas. Three funds: Environmental Solutions, Inclusive Opportunities, Mercy Partnership Fund (CDFI, 30 years). 41 shareholder resolutions filed in 2026. Pioneer in Catholic impact investing since the 1970s. In 1984, the Sisters of Mercy became the first investor in the New Hampshire Community Loan Fund — one of the earliest documented congregation investments in a CDFI and a foundational moment in the women religious impact investing movement.",
+      "url": "https://mercyinvestmentservices.org",
+      "keyPeople": [
+        {
+          "id": "sarah-smith",
+          "role": "Director, Mercy Partnership Fund"
+        },
+        {
+          "id": "sister-corinne-florek",
+          "role": "Former Director, Mercy Partnership Fund; Founder, RCIF"
+        }
+      ],
+      "crsConnection": {
+        "status": "direct",
+        "note": "Both CIIC Pledge signatories with overlapping congregation networks."
+      },
+      "priority": "meet",
+      "notes": "One of the most sophisticated Catholic investors in the US. Mercy Partnership Fund (MPF) is its in-house CDFI community investing program — distinct from RCIF, which Sr. Corinne founded independently after leaving Mercy. MPF invests through ~60 mission-driven organizations globally.",
+      "focus": "private-markets",
+      "sources": [
+        {
+          "label": "Investor Spotlight: Mercy Investment Services — Community Vision (2024)",
+          "url": "https://communityvisionca.org/investor-spotlight-mercy-investment-services/"
+        }
+      ]
+    },
+    {
+      "id": "dominican-climate",
+      "name": "Dominican Sisters Climate Solutions Funds",
+      "shortName": "Dominican CSF",
+      "category": "investment-mgmt",
+      "founded": "2018",
+      "hq": "16 US congregations",
+      "description": "16 Dominican congregations pooled $46.6M in 2018. Grown to $130M+ via Morgan Stanley/Graystone. Directed at UN SDGs and climate solutions globally. Announced June 18, 2020 — 5th anniversary of Laudato Si'. Private fund closed; public fund remains open.",
+      "url": null,
+      "keyPeople": [
+        {
+          "id": "pat-daly",
+          "role": "Caldwell Dominican; Earth Council leader; CSF formation leader"
+        },
+        {
+          "id": "elise-garcia",
+          "role": "Adrian Dominican; former LCWR President-elect; CSF initiative leader"
+        }
+      ],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "CRS co-hosted 2018 Vatican Conference on Impact Investing. Same world, no direct fund connection."
+      },
+      "priority": null,
+      "notes": "Landmark transaction. Showed congregations can pool assets to create new vehicles.",
+      "focus": "private-markets"
+    },
+    {
+      "id": "notre-dame",
+      "name": "Univ. of Notre Dame Endowment",
+      "shortName": "Notre Dame",
+      "category": "endowment",
+      "hq": "Notre Dame, IN",
+      "aum": "$15B+",
+      "description": "Most prominent Catholic institutional endowment investing at scale with Catholic guidelines. Grew from $400M (1988) to $15B+ (2023) under CIO Scott Malpass. Achieved 10% growth in 2024.",
+      "url": "https://endowment.nd.edu",
+      "keyPeople": [
+        {
+          "id": "scott-malpass",
+          "role": "Former CIO (1988-2021)"
+        }
+      ],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Both are major US Catholic institutions. No direct investing relationship."
+      },
+      "priority": null,
+      "notes": "The showcase performance case for Catholic values investing.",
+      "sources": [
+        {
+          "label": "Notre Dame endowment overview",
+          "url": "https://endowment.nd.edu"
+        }
+      ],
+      "focus": "private-markets"
+    },
+    {
+      "id": "commonspirit",
+      "name": "CommonSpirit Health",
+      "shortName": "CommonSpirit",
+      "category": "investment-mgmt",
+      "ciicPledge": {
+        "status": true,
+        "year": 2019
+      },
+      "founded": "2019",
+      "hq": "Chicago, IL",
+      "description": "Largest Catholic health system in the US (139 hospitals, $30B+ revenue), formed in 2019 from the merger of Dignity Health (formerly Catholic Healthcare West) and Catholic Health Initiatives (CHI). Built on the legacy of 17 congregations of women religious. Runs one of the most established community investment programs in Catholic health: the Community Investment Program (CIP) has operated since 1990, issuing 386 loans totaling $454M in approved funding. As of early 2025, the portfolio stands at $263M across 94 investments in affordable housing, healthcare access, food, and economic security. Also an investor in the Dominican Sisters Climate Solutions Funds (public fund).",
+      "url": "https://www.commonspirit.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Both large Catholic institutions. Potential for collaboration on health-related impact programs."
+      },
+      "priority": null,
+      "notes": "Represents Catholic health systems as major impact investors — the CIP is a 30-year model worth studying for blended finance precedents. The Dignity Health Community Investments Program (pre-merger) was an early collaborative model highlighted in the field.",
+      "focus": "private-markets",
+      "sources": [
+        {
+          "label": "CommonSpirit Community Investment Program",
+          "url": "https://www.commonspirit.org/impact/community-health-initiatives/community-investment-program"
+        },
+        {
+          "label": "Faith Investor Profile: CommonSpirit (CIIC/Francesco)",
+          "url": "https://assets.ctfassets.net/4oaw9man1yeu/6l5bdeNI8bP1YkMNC7OPCo/3c0575d8019a9d24953a082d28d7d345/faith-investor-profile-commonspirit.pdf"
+        }
+      ]
+    },
+    {
+      "id": "adriandominican",
+      "name": "Adrian Dominican Sisters",
+      "shortName": "Adrian Dominicans",
+      "category": "congregation",
+      "ciicPledge": {
+        "status": true,
+        "year": 2019
+      },
+      "hq": "Adrian, MI",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. Practicing permaculture since 2012. Among the most active congregations in impact investing and earth stewardship.",
+      "url": "https://adriandominicans.org",
+      "keyPeople": [
+        {
+          "id": "elise-garcia",
+          "role": "CSF initiative leader, former LCWR president-elect"
+        }
+      ],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Active in same Catholic impact investing circles."
+      },
+      "priority": null,
+      "notes": "One of the largest and most active Dominican congregations in the US.",
+      "focus": "private-markets"
+    },
+    {
+      "id": "caldwell-dominican",
+      "name": "Caldwell Dominican Sisters",
+      "shortName": "Caldwell Dominicans",
+      "category": "congregation",
+      "hq": "Caldwell, NJ",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. Sr. Pat Daly, a Caldwell Dominican, played the leading role in the fund's formation.",
+      "url": null,
+      "keyPeople": [
+        {
+          "id": "pat-daly",
+          "role": "Earth Council leader; CSF formation leader"
+        }
+      ],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "notes": "Sr. Pat Daly is one of the most important figures in faith-based impact investing.",
+      "focus": "private-markets"
+    },
+    {
+      "id": "sinsinawa-dominican",
+      "name": "Sinsinawa Dominican Sisters",
+      "shortName": "Sinsinawa",
+      "category": "congregation",
+      "hq": "Sinsinawa, WI",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. Long history of social justice and earth stewardship. ICCR member.",
+      "url": "https://www.sinsinawa.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "notes": "",
+      "focus": "private-markets"
+    },
+    {
+      "id": "dominican-hope",
+      "name": "Dominican Sisters of Hope",
+      "shortName": "Dominican Hope",
+      "category": "congregation",
+      "hq": "Ossining, NY",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. Set aside property as land trusts to protect from future development. ICCR member.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "notes": "",
+      "focus": "private-markets"
+    },
+    {
+      "id": "maryknoll-sisters",
+      "name": "Maryknoll Sisters of St. Dominic",
+      "shortName": "Maryknoll Sisters",
+      "category": "congregation",
+      "hq": "Maryknoll, NY",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. Internationally focused missionary congregation with presence in many of the same countries where CRS operates. ICCR member.",
+      "url": "https://www.maryknollsisters.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Both work internationally in similar geographies (Africa, Asia, Latin America). Worth exploring overlap."
+      },
+      "priority": null,
+      "notes": "Unique among the 16: an internationally-focused missionary congregation. CRS overlap significant.",
+      "focus": "private-markets"
+    },
+    {
+      "id": "dominican-peace",
+      "name": "Dominican Sisters of Peace",
+      "shortName": "Dominican Peace",
+      "category": "congregation",
+      "hq": "Columbus, OH",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. Converted land around their Kentucky motherhouse into a sustainable farm. ICCR member.",
+      "url": "https://oppeace.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "notes": "",
+      "focus": "private-markets"
+    },
+    {
+      "id": "amityville-dominican",
+      "name": "Amityville Dominican Sisters",
+      "shortName": "Amityville",
+      "category": "congregation",
+      "hq": "Amityville, NY",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. ICCR member.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "focus": "private-markets"
+    },
+    {
+      "id": "springfield-dominican",
+      "name": "Springfield Dominican Sisters",
+      "shortName": "Springfield",
+      "category": "congregation",
+      "hq": "Springfield, IL",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. ICCR member.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "focus": "private-markets"
+    },
+    {
+      "id": "tacoma-dominican",
+      "name": "Tacoma Dominican Sisters",
+      "shortName": "Tacoma",
+      "category": "congregation",
+      "hq": "Tacoma, WA",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. ICCR member.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "focus": "private-markets"
+    },
+    {
+      "id": "houston-dominican",
+      "name": "Dominican Sisters of Houston",
+      "shortName": "Houston",
+      "category": "congregation",
+      "hq": "Houston, TX",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. ICCR member.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "focus": "private-markets"
+    },
+    {
+      "id": "grandrapids-dominican",
+      "name": "Dominican Sisters of Grand Rapids",
+      "shortName": "Grand Rapids",
+      "category": "congregation",
+      "hq": "Grand Rapids, MI",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. ICCR member.",
+      "url": "https://grdominicans.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "focus": "private-markets"
+    },
+    {
+      "id": "mission-sanjose-dominican",
+      "name": "Mission San Jose Dominican Sisters",
+      "shortName": "Mission San Jose",
+      "category": "congregation",
+      "hq": "Fremont, CA",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. Set aside property as land trusts. ICCR member.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "focus": "private-markets"
+    },
+    {
+      "id": "sanrafael-dominican",
+      "name": "San Rafael Dominican Sisters",
+      "shortName": "San Rafael",
+      "category": "congregation",
+      "hq": "San Rafael, CA",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. ICCR member. Sr. Patricia Bruno, OP, a San Rafael Dominican, was instrumental in founding the Northern California Community Loan Fund (now Community Vision) — an early example of women religious directly seeding CDFI infrastructure in the 1980s.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "focus": "private-markets",
+      "sources": [
+        {
+          "label": "Nun Funds: The Original Impact Investors — Shelterforce (2018)",
+          "url": "https://shelterforce.org/2018/01/24/nun-funds-original-impact-investors/"
+        }
+      ]
+    },
+    {
+      "id": "saratoga-dominican",
+      "name": "Dominican Sisters of St. Catherine of Siena",
+      "shortName": "Saratoga",
+      "category": "congregation",
+      "hq": "Saratoga, CA",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. ICCR member.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "focus": "private-markets"
+    },
+    {
+      "id": "blauvelt-dominican",
+      "name": "Blauvelt Dominican Sisters",
+      "shortName": "Blauvelt",
+      "category": "congregation",
+      "hq": "Blauvelt, NY",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. ICCR member.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "focus": "private-markets"
+    },
+    {
+      "id": "sparkill-dominican",
+      "name": "Dominicans of Sparkill",
+      "shortName": "Sparkill",
+      "category": "congregation",
+      "hq": "Sparkill, NY",
+      "description": "One of the 16 Dominican congregations in the Climate Solutions Funds. ICCR member.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "priority": null,
+      "focus": "private-markets"
+    },
+    {
+      "id": "rcif",
+      "name": "Religious Communities Impact Fund",
+      "shortName": "RCIF",
+      "category": "capital",
+      "founded": "2008",
+      "hq": "US (virtual)",
+      "description": "CDFI loan pool founded by Sr. Corinne Florek, OP (Adrian Dominican) in 2008. Pools assets from congregations of women religious and invests in organizations serving low-income communities. Grew to 35 sponsoring congregations and $13.3M in total assets under Sr. Corinne's leadership. Made 200+ investments totaling $28M+. Sr. Corinne retired in 2020. Won 2010 Ned Gramlich Lifetime Achievement Award for Responsible Finance (OFN). Closely related to Mercy Partnership Fund — Sr. Corinne also started Mercy's community investing program.",
+      "url": "https://rcif.org",
+      "keyPeople": [
+        {
+          "id": "sister-corinne-florek",
+          "role": "Founder and founding Executive Director (2008–2020)"
+        }
+      ],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Serves many of the same congregations as CIIC Pledge signatories. Sr. Corinne Florek directed the Adrian Dominican portfolio before founding RCIF."
+      },
+      "priority": "meet",
+      "notes": "Distinct from Mercy Partnership Fund (MPF): MPF is Mercy IS's own in-house CDFI vehicle; RCIF is a separate, independent organization that Sr. Corinne founded after leaving Mercy, pooling capital from multiple congregations — not just Sisters of Mercy. Sr. Corinne built the MPF model at Mercy, then took that expertise and created RCIF as a standalone cooperative loan fund any congregation can join. The canonical model for aggregating small congregation capital into CDFI investments.",
+      "focus": "private-markets",
+      "sources": [
+        {
+          "label": "RCIF — Mission Investors Exchange member listing",
+          "url": "https://missioninvestors.org/redhen/org/625"
+        },
+        {
+          "label": "Leviticus Fund leverages faith capital — Global Sisters Report",
+          "url": "https://www.globalsistersreport.org/news/social-justice/news/leviticus-fund-leverages-faith-capital-poverty-fighting-projects"
+        }
+      ]
+    },
+    {
+      "id": "ofn",
+      "name": "Opportunity Finance Network",
+      "shortName": "OFN",
+      "category": "ecosystem",
+      "ecosystemNode": true,
+      "founded": "1986",
+      "hq": "Washington, DC",
+      "description": "Nation's leading CDFI network and intermediary. ~500 CDFI members. $1B+ in total assets managed. Cumulative member financing of $124B+, supporting 3.4M jobs and 1M+ businesses through 2023. Hosts the annual OFN Conference (largest CDFI gathering). Issues the prestigious Ned Gramlich Lifetime Achievement Award for Responsible Finance — Sr. Corinne Florek won in 2010; Amanda Joseph spent 6 years here before GIIN. CEO: Harold Pettigrew. Launched CDFI Innovation Initiative with $25M MassMutual Foundation partnership (2024).",
+      "url": "https://www.ofn.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "No direct CRS-OFN relationship confirmed. OFN is the premier US CDFI network — Leviticus Fund is an OFN member."
+      },
+      "priority": null,
+      "notes": "Not Catholic-specific, but the backbone of the CDFI universe that Catholic impact investors deploy into. Amanda Joseph's 6-year tenure here is relevant context. Worth tracking OFN's annual conference for CDFI deal flow and relationships.",
+      "focus": "private-markets"
+    },
+    {
+      "id": "catholic-investment-services",
+      "name": "Catholic Investment Services",
+      "shortName": "CIS",
+      "category": "investment-mgmt",
+      "founded": "2013",
+      "hq": "Boston, MA",
+      "description": "Nonprofit OCIO (Outsourced CIO) for Catholic institutions. Founded by Scott Malpass (former Notre Dame CIO) and Jack Brennan (former Vanguard CEO/Chairman). Purpose: give smaller Catholic institutions access to premier investment programs previously only available to large endowments. Has closed a private equity fund and a venture fund; engaged Wellington as sub-advisor for public markets. Hosts annual Catholic Investor Symposium. Non-profit model — driven by client mission, not profit. Elizabeth Garlow's Livable Future Investing workshop alumnus Michael Nagy is Managing Director at CIS.",
+      "url": "https://catholicinvest.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Scott Malpass connection to Notre Dame — both major Catholic institutions. CIS serves the same Catholic institutional investor universe as CRS's potential future partners."
+      },
+      "priority": null,
+      "notes": "The 'Vanguard for Catholic institutions' — nonprofit fee structure, world-class investment discipline, Catholic values screening. Scott Malpass is one of the most respected names in Catholic investment. Worth a relationship given CRS's own asset management.",
+      "focus": "private-markets"
+    },
+    {
+      "id": "iasj",
+      "name": "Investor Advocates for Social Justice",
+      "shortName": "IASJ",
+      "category": "field-builder",
+      "founded": "1975",
+      "hq": "Montclair, NJ",
+      "description": "501(c)(3) representing faith-based investors in shareholder advocacy. Successor to the Tri-State Coalition for Responsible Investment (Tri-CRI), founded in 1975 by Catholic congregations engaged in anti-apartheid corporate engagement. Leads collaborative shareholder advocacy campaigns on human rights, climate justice, racial equity, and the common good. Affiliates include Capuchin Order, Religious of the Sacred Heart of Mary, and many Catholic congregations. Works closely with ICCR. Executive Director: Courtney Wicks. Filed Tyson Foods child labor resolution. GIIN partner on racial equity investing for faith-based investors.",
+      "url": "https://iasj.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Catholic congregations that are CRS partners (e.g. women religious) are also IASJ affiliates. IASJ's human rights and global justice work directly aligns with CRS mission."
+      },
+      "priority": null,
+      "notes": "Distinct from ICCR — IASJ is a specialized service organization that represents affiliates in engagements, whereas ICCR is the broader coalition. Both important. IASJ's roots in Catholic women religious make it highly relevant. Their work on child labor and supply chains is CRS-adjacent.",
+      "focus": "public-markets"
+    },
+    {
+      "id": "releven",
+      "name": "Relèven",
+      "shortName": "Relèven",
+      "category": "capital",
+      "founded": "2018",
+      "hq": "Montreal, Canada (national)",
+      "description": "Canadian charitable organization (formerly Trinity Centres Foundation) focused on adaptive reuse of underutilized faith properties as community hubs and affordable housing. Canada's national leader in faith property repurposing. 50+ projects supported; $75M+ in local financing released over 6 years. Launched $30M Relèven Transition Fund (LP/GP structure) in 2024 with Definity Insurance Foundation. 4,000+ Canadian faith properties expected to need repurposing in next 10 years. Partner of the Francesco Collaborative; cited in Francesco's description of its network.",
+      "url": "https://releven.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "Canada-focused. Not a direct CRS partner but represents an innovative model for faith property capital redeployment that CRS and US Catholic partners could learn from."
+      },
+      "priority": null,
+      "notes": "Fascinating case study in 'unlocking' stranded faith community assets. The Francesco Collaborative partnership makes this relevant to the US Catholic investing world even though it's Canadian. The model — blended finance for faith property transition — is replicable in the US.",
+      "focus": "private-markets"
+    },
+    {
+      "id": "fsm",
+      "name": "Franciscan Sisters of Mary",
+      "shortName": "FSM",
+      "category": "congregation",
+      "founded": "1872",
+      "hq": "St. Louis, MO",
+      "description": "Roman Catholic congregation of women religious based in St. Louis, founders of SSM Health. Since 2013 have committed 15% of investments to impact. Divested from fossil fuels. Co-investors in Dominican Climate Solutions Fund. John O'Shaughnessy (CIO) co-founded CIIC in 2014.",
+      "url": "https://fsmonline.org",
+      "ciicPledge": {
+        "status": true,
+        "year": 2019
+      },
+      "priority": "meet",
+      "crsConnection": {
+        "status": "indirect",
+        "note": "FSM's CIO co-founded CIIC, which has a direct CRS connection. FSM was a co-investor in Dominican Climate Solutions Fund alongside CommonSpirit. In November 2024, FSM liquidated its investment in the Dominican Climate Solutions Fund due to the fund's partial shift away from direct impact strategies toward passive ESG management, high fees, and lack of meaningful impact reporting."
+      },
+      "sources": [
+        {
+          "label": "FSM Climate Solutions Fund update",
+          "url": "https://fsmonline.org/2016-2023/#climate-solutions-fund"
+        }
+      ],
+      "keyPeople": [
+        {
+          "id": "john-oshaughnessy",
+          "role": "CIO / CIIC Co-founder"
+        }
+      ],
+      "focus": "private-markets"
+    },
+    {
+      "id": "fadica",
+      "name": "FADICA",
+      "shortName": "FADICA",
+      "category": "field-builder",
+      "founded": "1976",
+      "hq": "Washington, DC",
+      "description": "Leading Catholic philanthropic network of foundations and donors. Members represent over $50B in assets. Mission Driven Investing Member Group creates space for members to collaborate on values-aligned investment practices. Elizabeth Garlow has engaged with FADICA through CIIC work.",
+      "url": "https://www.fadica.org",
+      "priority": null,
+      "crsConnection": {
+        "status": "indirect",
+        "note": "FADICA members include Franciscan Sisters of Mary and other Catholic foundations active in impact investing."
+      },
+      "focus": "grants",
+      "sources": [
+        {
+          "label": "FADICA member list",
+          "url": "https://www.fadica.org/our-members/"
+        }
+      ]
+    },
+    {
+      "id": "oblate-ipit",
+      "name": "Oblate International Pastoral Investment Trust",
+      "shortName": "Oblate IPIT",
+      "category": "congregation",
+      "hq": "US",
+      "description": "Investment trust of the Missionary Oblates of Mary Immaculate. Co-investor in Dominican Sisters Climate Solutions Fund (public fund). Member of CIIC Pledge.",
+      "url": null,
+      "priority": null,
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection."
+      },
+      "focus": "private-markets"
+    },
+    {
+      "id": "georgetown",
+      "name": "Georgetown University",
+      "shortName": "Georgetown",
+      "category": "endowment",
+      "founded": "1789",
+      "hq": "Washington, DC",
+      "aum": "$3.7B",
+      "description": "Oldest Catholic and Jesuit university in the US. SRI policy explicitly grounded in Catholic Social Teaching — considers impact investments in renewable energy, healthcare, financial inclusion, and sustainable agriculture. Committee on Investments and Social Responsibility (CISR) oversees proxy voting. Committed to full fossil fuel divestment. Initiative on Catholic Social Thought and Public Life is a major convening hub.",
+      "url": "https://investments.georgetown.edu/investor-responsibility-2/",
+      "priority": null,
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Both DC-based Catholic institutions. Georgetown's Initiative on Catholic Social Thought has featured Francesco Collaborative and CIIC speakers. Natural relationship to cultivate."
+      },
+      "sources": [
+        {
+          "label": "Georgetown SRI Policy",
+          "url": "https://investments.georgetown.edu/investor-responsibility-2/"
+        }
+      ],
+      "focus": "private-markets"
+    },
+    {
+      "id": "loyola-chicago",
+      "name": "Loyola University Chicago",
+      "shortName": "Loyola Chicago",
+      "category": "endowment",
+      "founded": "1870",
+      "hq": "Chicago, IL",
+      "aum": "$1B+",
+      "description": "Jesuit Catholic university. Amended investment policy in 2016 to include Responsible and Sustainable Investing Principles aligned with Jesuit and Catholic traditions. Committed to full fossil fuel divestment in 2021. Hosted the first Francesco CST & Investing Summit in September 2024. Baumhart Center for Social Enterprise is a leading Catholic business ethics hub.",
+      "url": "https://www.luc.edu/finance/investmentoffice.shtml",
+      "priority": null,
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Hosted first Francesco CST & Investing Summit. Baumhart Center is active in Catholic social enterprise space — potential convening partner for CRS."
+      },
+      "sources": [
+        {
+          "label": "Loyola Chicago responsible investing policy",
+          "url": "https://www.intentionalendowments.org/loyola_university_chicago"
+        },
+        {
+          "label": "Loyola fossil fuel divestment commitment",
+          "url": "https://www.chicagobusiness.com/education/loyola-university-chicago-quit-fossil-fuel-investments"
+        }
+      ],
+      "focus": "private-markets"
+    },
+    {
+      "id": "cua",
+      "name": "Catholic University of America",
+      "shortName": "CUA",
+      "category": "endowment",
+      "founded": "1887",
+      "hq": "Washington, DC",
+      "aum": "~$365M",
+      "description": "National university of the Catholic Church, founded by US bishops. Busch School of Business developed the Consortium of Catholic Investors proxy voting policy — the first framework fully aligned with 2021 USCCB guidelines. Adopted by ISS and Glass Lewis (together controlling 97% of proxy advisory market) for spring 2026 shareholder season. Cardinal Fund is a student-managed USCCB-screened investment portfolio.",
+      "url": "https://business.catholic.edu",
+      "priority": null,
+      "crsConnection": {
+        "status": "indirect",
+        "note": "DC-based Catholic institution with direct USCCB relationship. CUA's proxy policy work is the most significant structural development in Catholic shareholder engagement in years."
+      },
+      "sources": [
+        {
+          "label": "CUA Consortium proxy voting policy announcement",
+          "url": "https://www.catholic.edu/info-for-the-media/media-releases/catholic-shareholders-can-have-faith-new-proxy-guidelines"
+        }
+      ],
+      "focus": "public-markets"
+    },
+    {
+      "id": "boston-college",
+      "name": "Boston College",
+      "shortName": "Boston College",
+      "category": "endowment",
+      "founded": "1863",
+      "hq": "Chestnut Hill, MA",
+      "aum": "$4.3B",
+      "description": "Jesuit Catholic university with one of the larger Catholic endowments in the US. Has resisted calls for fossil fuel divestment and SRI transparency, stating the endowment is not a vehicle for social change — a notable contrast to Georgetown and Loyola Chicago. Worth tracking as a large Catholic institutional investor not yet engaged in impact investing, and a potential target for future fund outreach.",
+      "url": "https://www.bc.edu/bc-web/offices/financial-vice-president/departments/treasurer/endowment.html",
+      "priority": null,
+      "crsConnection": {
+        "status": "none",
+        "note": "No known connection. Large Catholic endowment not yet engaged in impact investing — relevant as a future fund prospect."
+      },
+      "sources": [
+        {
+          "label": "BC endowment transparency critique",
+          "url": "https://bcheights.com/203485/opinion/boston-college-has-a-responsibility-to-make-its-investment-portfolio-more-transparent/"
+        }
+      ],
+      "focus": "private-markets"
+    },
+    {
+      "id": "economy-of-francesco",
+      "name": "Economy of Francesco",
+      "shortName": "EoF",
+      "category": "field-builder",
+      "founded": "2019",
+      "hq": "Assisi, Italy",
+      "focus": "private-markets",
+      "description": "Pope Francis-initiated global movement of young economists, entrepreneurs, and changemakers committed to a more just and sustainable economy. Named for St. Francis of Assisi. Annual gatherings in Assisi. Inspiration for the Francesco Collaborative.",
+      "url": "https://www.francescoeconomy.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Inspiration for the Francesco Collaborative, which CRS has indirect ties to."
+      },
+      "priority": null,
+      "notes": "Not an investing org per se — a movement. Worth knowing as the source behind Francesco Collaborative.",
+      "sources": [
+        {
+          "label": "Francesco Collaborative — About Us",
+          "url": "https://francescocollaborative.org/our-team/"
+        }
+      ]
+    },
+    {
+      "id": "laudato-si-movement",
+      "name": "Laudato Si' Movement",
+      "shortName": "LSM",
+      "category": "field-builder",
+      "founded": "2015",
+      "hq": "Rome, Italy",
+      "focus": "public-markets",
+      "description": "Global Catholic environmental movement inspired by Pope Francis' 2015 encyclical Laudato Si'. Leads campaigns on fossil fuel divestment and climate justice for Catholic institutions. John O'Shaughnessy (FSM/CIIC) was a board member and treasurer 2017–2023.",
+      "url": "https://laudatosimovement.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "O'Shaughnessy (CIIC co-founder) was a board member and treasurer (2017–2023). LSM campaigns frequently reference Catholic investor action."
+      },
+      "priority": null,
+      "notes": "Primarily advocacy/divestment focused. Relevant as context for why Catholic investors are moving on climate."
+    },
+    {
+      "id": "lcwr",
+      "name": "Leadership Conference of Women Religious",
+      "shortName": "LCWR",
+      "category": "field-builder",
+      "founded": "1956",
+      "hq": "Silver Spring, MD",
+      "focus": null,
+      "description": "Peak membership organization for leaders of congregations of Catholic women religious in the US. Represents ~80% of the approximately 135,000 women religious in the US. Almost every congregation active in Catholic impact investing (Mercy, Adrian Dominicans, FSM, etc.) is an LCWR member. Sr. Elise Garcia (Adrian Dominican) was president-elect.",
+      "url": "https://lcwr.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "CIIC Pledge signatories are predominantly LCWR members. LCWR is the institutional home of the women religious who are the primary Catholic impact investors."
+      },
+      "priority": null,
+      "notes": "Not an investing org — the institutional umbrella. Essential context for understanding why women religious congregations move together on investing."
+    },
+    {
+      "id": "azure",
+      "name": "Azure Source Capital",
+      "shortName": "Azure",
+      "category": "capital",
+      "founded": "2018",
+      "hq": "El Salvador / Honduras (managed from Bethesda, MD)",
+      "focus": "private-markets",
+      "description": "Blended finance facility co-founded by CRS and IDB Lab in 2018 at the Third Vatican Conference on Impact Investing. Funds loans to small-scale water and sanitation utilities in El Salvador, Honduras, and Guatemala. $12.2M in total capital commitments as of 2023. 22+ water systems financed, 230,000+ people reached. Managed by Total Impact Capital. Paired with Azure Technical Assistance partnership led by CRS country teams.",
+      "url": "https://www.azurewater.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "CRS is a co-founder and anchor investor. Azure is CRS's flagship Innovative Finance vehicle."
+      },
+      "priority": "meet",
+      "notes": "CRS's most concrete expression of blended finance in action. The canonical internal case study for Innovative Finance work.",
+      "sources": [
+        {
+          "label": "Azure Source Capital — Total Impact Capital",
+          "url": "https://www.totalimpactcapital.com/azure"
+        },
+        {
+          "label": "Azure $2.4M close announcement",
+          "url": "https://www.linkedin.com/pulse/azure-source-capital-closes-additional-24-million-funding"
+        }
+      ]
+    },
+    {
+      "id": "idb-lab",
+      "name": "IDB Lab",
+      "shortName": "IDB Lab",
+      "category": "capital",
+      "ecosystemNode": true,
+      "founded": "1993",
+      "hq": "Washington, DC",
+      "focus": "private-markets",
+      "description": "Innovation laboratory of the Inter-American Development Bank (IDB) Group. Focuses on early-stage private sector solutions in Latin America and the Caribbean. Approved $2B+ in projects across 26 countries since 1993. Co-founder and anchor investor in Azure Source Capital alongside CRS. Formerly known as MIF (Multilateral Investment Fund).",
+      "url": "https://bidlab.org/en",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "Co-founder of Azure Source Capital with CRS."
+      },
+      "priority": "meet",
+      "notes": "Key development finance partner for CRS Innovative Finance. Their Latin America focus overlaps directly with CRS program geographies.",
+      "sources": [
+        {
+          "label": "IDB Lab website",
+          "url": "https://bidlab.org/en"
+        }
+      ]
+    },
+    {
+      "id": "dfc",
+      "name": "US International Development Finance Corporation",
+      "shortName": "DFC",
+      "category": "capital",
+      "ecosystemNode": true,
+      "founded": "2019",
+      "hq": "Washington, DC",
+      "focus": "private-markets",
+      "description": "US government's development finance institution. Successor to OPIC. Provides loans, guaranties, equity, and political risk insurance to support private investment in developing countries. Up to $60B in financing authority. Longtime lender to Azure Source Capital. Essential counterpart for any CRS blended finance structure seeking US government catalytic capital.",
+      "url": "https://www.dfc.gov",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "Lender to Azure Source Capital. DFC is a natural partner for CRS Innovative Finance given CRS's global development footprint."
+      },
+      "priority": "meet",
+      "notes": "The single most important US government tool for blended finance. Understanding DFC's mandate, instruments, and priorities is essential for CRS IF work.",
+      "sources": [
+        {
+          "label": "DFC website",
+          "url": "https://www.dfc.gov"
+        }
+      ]
+    },
+    {
+      "id": "total-impact-capital",
+      "name": "Total Impact Capital",
+      "shortName": "Total Impact",
+      "category": "capital",
+      "founded": "~2015",
+      "hq": "Bethesda, MD",
+      "focus": "private-markets",
+      "description": "Impact investing firm headquartered in Bethesda, MD. Fund manager for Azure Source Capital — leads loan disbursements, underwriting, investor relations, and cash management. Has regional representation in El Salvador and Honduras. Structured Azure's financial model alongside CRS and IDB Lab.",
+      "url": "https://www.totalimpactcapital.com",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "Manages Azure Source Capital on behalf of CRS and co-investors."
+      },
+      "priority": "meet",
+      "notes": "Closest operational partner on Azure. Bethesda HQ means proximity to CRS Baltimore office. The relationship to cultivate for Innovative Finance deal structuring.",
+      "ecosystemNode": true,
+      "sources": [
+        {
+          "label": "Total Impact Capital website",
+          "url": "https://www.totalimpactcapital.com"
+        }
+      ]
+    },
+    {
+      "id": "stone-family-foundation",
+      "name": "Stone Family Foundation",
+      "shortName": "Stone Family Fdn",
+      "category": "capital",
+      "founded": null,
+      "hq": "UK",
+      "focus": "private-markets",
+      "description": "UK-based philanthropic foundation focused on market-based solutions for global development challenges, with a particular focus on WASH (water, sanitation, and hygiene). Not Catholic-oriented. Investor in Azure Source Capital (2023 round).",
+      "url": "https://www.thesff.com",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "Lender to Azure Source Capital."
+      },
+      "priority": null,
+      "notes": "UK philanthropic foundation. Their Azure investment signals appetite for WASH blended finance. Worth knowing as a potential future partner on similar CRS structures.",
+      "ecosystemNode": true
+    },
+    {
+      "id": "osprey-foundation",
+      "name": "Osprey Foundation",
+      "shortName": "Osprey Fdn",
+      "category": "capital",
+      "founded": null,
+      "hq": "US",
+      "focus": "private-markets",
+      "description": "US private foundation. Investor in Azure Source Capital (2023 round). Limited public profile — focus appears to include water and international development. Not Catholic-oriented.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "Lender to Azure Source Capital."
+      },
+      "priority": null,
+      "notes": "Limited information available. Azure investment is primary data point.",
+      "ecosystemNode": true
+    },
+    {
+      "id": "felician-sisters",
+      "name": "Felician Sisters of North America",
+      "shortName": "Felician Sisters",
+      "category": "congregation",
+      "founded": "1855",
+      "hq": "Livonia, MI",
+      "focus": "private-markets",
+      "description": "Franciscan congregation of Catholic women religious with provinces across the US and Canada. Investor in Azure Source Capital (2023 round) — one of the few congregation investors in a CRS-originated blended finance vehicle. Members active in healthcare, education, and social services.",
+      "url": "https://feliciansisters.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "Lender to Azure Source Capital — direct financial relationship with a CRS vehicle."
+      },
+      "priority": null,
+      "notes": "Notable as a congregation investor in Azure. Signals appetite among women religious for CRS-originated blended finance. Worth tracking — potential CIIC connection."
+    },
+    {
+      "id": "df-impact-capital",
+      "name": "DF Impact Capital",
+      "shortName": "DF Impact",
+      "category": "capital",
+      "founded": null,
+      "hq": "US",
+      "focus": "private-markets",
+      "description": "Impact investment firm. Investor in Azure Source Capital (2023 round). Limited public profile.",
+      "url": null,
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "Lender to Azure Source Capital."
+      },
+      "priority": null,
+      "notes": "Minimal public information. Azure is the primary data point.",
+      "ecosystemNode": true
+    },
+    {
+      "id": "impact-assets",
+      "name": "Impact Assets / Blue Sky Social Justice Fund",
+      "shortName": "Impact Assets",
+      "category": "investment-mgmt",
+      "founded": "2010",
+      "hq": "Bethesda, MD",
+      "focus": "private-markets",
+      "description": "Nonprofit financial services firm that increases flow of capital to impact investing. Manages the Giving Fund (donor-advised fund platform). Blue Sky Social Justice Fund is a DAF managed by Impact Assets — investor in Azure Source Capital (2023 round). Also manages the ImpactAssets 50, an annual showcase of impact fund managers.",
+      "url": "https://www.impactassets.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "Blue Sky Social Justice Fund (Impact Assets DAF) is a lender to Azure Source Capital."
+      },
+      "priority": null,
+      "notes": "Worth knowing as a DAF platform that channels philanthropic capital into impact investments. Their IA50 list is a useful reference for impact fund manager discovery. Bethesda HQ — same geography as Total Impact Capital and near CRS."
+    },
+    {
+      "id": "hilton-foundation",
+      "name": "Conrad N. Hilton Foundation",
+      "shortName": "Hilton Foundation",
+      "category": "capital",
+      "founded": "1944",
+      "hq": "Agoura Hills, CA",
+      "focus": "grants",
+      "description": "Major US private foundation with ~$7.4B in assets. Seven core initiatives including Catholic Sisters, Safe Water, and Refugees. The Catholic Sisters initiative has distributed $188M+ across 157 countries since 1988. Repeat CRS grantmaker through Early Childhood Development and Catholic Sisters programs in sub-Saharan Africa.",
+      "url": "https://www.hiltonfoundation.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "direct",
+        "note": "Repeat CRS grantmaker — $5.4M in 2021, $4.3M in 2022, $5.4M in Q4 2024, all through Catholic Sisters / Early Childhood Development programs in Africa."
+      },
+      "priority": null,
+      "notes": "Not an impact investor per se, but a major philanthropic partner with direct CRS relationship and deep Catholic sisters focus. Potential catalytic capital source for future CRS blended finance structures.",
+      "sources": [
+        {
+          "label": "Hilton Foundation 2024 grantmaking",
+          "url": "https://www.hiltonfoundation.org/news/the-conrad-n-hilton-foundation-granted-nearly-300-million-in-2024/"
+        }
+      ]
+    },
+    {
+      "id": "trinity-health",
+      "name": "Trinity Health",
+      "shortName": "Trinity Health",
+      "category": "investment-mgmt",
+      "founded": "2013",
+      "hq": "Livonia, MI",
+      "description": "Third-largest US nonprofit Catholic health system (92 hospitals, 25 states). Has run a Community Investing Program for over a decade, providing below-market loans primarily through CDFIs. As of FY2024, $68.1M in total loan commitments; has supported $970M+ in community investment since 2018 via $40M in deployed loans. Focus areas: affordable housing, food access, healthcare access, economic development. Early legacy hospitals contributed investments through Mercy Loan Fund. Member of the Healthcare Anchor Network alongside CommonSpirit and Ascension.",
+      "url": "https://www.trinity-health.org",
+      "keyPeople": [],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct connection with CRS."
+      },
+      "priority": null,
+      "focus": "private-markets",
+      "notes": "Parallel model to CommonSpirit's CIP. Historically linked to Mercy Loan Fund. Worth tracking as a peer example of Catholic health system community investing.",
+      "sources": [
+        {
+          "label": "Trinity Health Community Investing Program",
+          "url": "https://www.trinity-health.org/our-impact/community-health-and-well-being/investing-in-our-communities"
+        }
+      ]
+    },
+    {
+      "id": "mercy-housing",
+      "name": "Mercy Housing",
+      "shortName": "Mercy Housing",
+      "category": "capital",
+      "founded": "1981",
+      "hq": "Denver, CO",
+      "description": "One of the largest national affordable housing nonprofits in the US, founded in 1981 by the Sisters of Mercy. Develops, preserves, and operates affordable housing in 41+ states. Its CDFI affiliate, Mercy Community Capital (formerly Mercy Loan Fund), provides below-market loans exclusively to affordable housing developers — 439 loans in 37 states totaling $221M since 1985, resulting in 18,200+ homes. An early and foundational institution in the women religious affordable housing movement. Dee Walsh, EVP and chief officer of strategic development, oversees the Mercy Loan Fund.",
+      "url": "https://www.mercyhousing.org",
+      "keyPeople": [
+        {
+          "id": "dee-walsh",
+          "role": "EVP and Chief Officer of Strategic Development"
+        }
+      ],
+      "crsConnection": {
+        "status": "none",
+        "note": "No known direct CRS connection, but Sisters of Mercy heritage overlaps with Mercy IS."
+      },
+      "priority": null,
+      "focus": "private-markets",
+      "notes": "Distinct from Mercy Investment Services (different Sisters of Mercy ministry). Historical model: the Shelterforce 2018 article highlights Mercy Housing as a landmark collaborative investment structure. Trinity Health legacy hospitals were early Mercy Loan Fund investors.",
+      "sources": [
+        {
+          "label": "Nun Funds: The Original Impact Investors — Shelterforce (2018)",
+          "url": "https://shelterforce.org/2018/01/24/nun-funds-original-impact-investors/"
+        },
+        {
+          "label": "Mercy Community Capital",
+          "url": "https://www.mercyhousing.org/partner-with-us/mercy-community-capital/"
+        }
+      ]
+    }
+  ],
+  "funds": [
+    {
+      "id": "mercy-mpf",
+      "name": "Mercy Partnership Fund",
+      "manager": "mercy",
+      "assetClass": "private-debt",
+      "focus": "CDFI / community development",
+      "openToNewInvestors": true,
+      "description": "30-year CDFI vehicle. Below-market rate investments to 37 CDFIs nationwide and 65+ organizations in 73 countries. 71% of capital in low-to-moderate income communities.",
+      "url": "https://mercyinvestmentservices.org/our-approach/impact-investing/mercy-partnership-fund/"
+    },
+    {
+      "id": "mercy-esf",
+      "name": "Environmental Solutions Fund",
+      "manager": "mercy",
+      "assetClass": "private-markets",
+      "focus": "Climate / environment",
+      "openToNewInvestors": true,
+      "description": "Solar, wind, sustainable ag, clean tech, water sustainability. $78M+ in commitments since 2014.",
+      "url": "https://mercyinvestmentservices.org/our-approach/impact-investing/environmental-solutions-fund/"
+    },
+    {
+      "id": "mercy-iof",
+      "name": "Inclusive Opportunities Fund",
+      "manager": "mercy",
+      "assetClass": "private-markets",
+      "focus": "Gender / racial equity",
+      "openToNewInvestors": true,
+      "description": "Invests in women, people of color, and others excluded from traditional capital markets.",
+      "url": "https://mercyinvestmentservices.org/our-approach/impact-investing/environmental-solutions-fund-2/"
+    },
+    {
+      "id": "charism-fof",
+      "name": "Charism Capital Fund of Funds",
+      "manager": "charism",
+      "assetClass": "fund-of-funds",
+      "focus": "Multi-strategy impact",
+      "openToNewInvestors": true,
+      "status": "pre-launch",
+      "description": "Launching Q2 2026. Min $100K. Solidarity returns — mission over financial performance.",
+      "url": "https://www.charismcapital.org"
+    },
+    {
+      "id": "calvert-note",
+      "name": "Community Investment Note",
+      "manager": "calvert",
+      "assetClass": "private-debt",
+      "focus": "Community development",
+      "openToNewInvestors": true,
+      "description": "Fixed-rate notes funding CDFIs, microfinance, and affordable housing lenders globally.",
+      "url": "https://calvertimpact.org/invest"
+    },
+    {
+      "id": "lev-fund",
+      "name": "Leviticus Fund",
+      "manager": "leviticus",
+      "assetClass": "private-debt",
+      "focus": "Affordable housing / CDFI",
+      "openToNewInvestors": true,
+      "description": "NY-based CDFI. Below-market loans to affordable housing developers. One of the original CDFIs supported by women religious.",
+      "url": "https://www.levfund.org"
+    },
+    {
+      "id": "cbis-cri",
+      "name": "CBIS CRI Fund Family (13 funds)",
+      "manager": "cbis",
+      "assetClass": "public-markets",
+      "focus": "Multi-asset Catholic screened",
+      "openToNewInvestors": true,
+      "description": "All 13 funds apply Catholic Responsible Investment screens plus active engagement. CRQSX expense ratio: 0.09%.",
+      "url": "https://cbisonline.com/us/catholic-responsible-investing/investments/"
+    },
+    {
+      "id": "cath-etf-f",
+      "name": "CATH ETF",
+      "manager": "cath-etf",
+      "assetClass": "public-equity",
+      "focus": "S&P 500 Catholic screened",
+      "openToNewInvestors": true,
+      "description": "Passive S&P 500 screened against USCCB guidelines. $1.11B AUM. Ticker: CATH on NYSE.",
+      "url": "https://www.globalxetfs.com/funds/cath"
+    },
+    {
+      "id": "dom-csf-pub",
+      "name": "Dominican Climate Solutions (Public)",
+      "manager": "dominican-climate",
+      "assetClass": "public-markets",
+      "focus": "Climate / SDGs",
+      "openToNewInvestors": true,
+      "description": "Public companion fund open to additional investors. CommonSpirit Health and Oblate International Pastoral Investment Trust are co-investors. FSM was a co-investor but liquidated in November 2024 due to the fund's partial shift away from direct impact strategies toward passive ESG management.",
+      "url": null
+    },
+    {
+      "id": "dom-csf-priv",
+      "name": "Dominican Climate Solutions (Private)",
+      "manager": "dominican-climate",
+      "assetClass": "private-markets",
+      "focus": "Climate / SDGs",
+      "openToNewInvestors": false,
+      "description": "Seeded with $46.6M in 2018. Grown to $130M+. Closed to new investors. Managed via Morgan Stanley/Graystone.",
+      "url": null
+    },
+    {
+      "id": "rcif-pool",
+      "name": "RCIF Loan Pool",
+      "manager": "rcif",
+      "assetClass": "private-debt",
+      "focus": "CDFI / community development",
+      "openToNewInvestors": true,
+      "description": "Pooled loan fund for congregations of women religious. $13.3M in assets at peak (2020). 200+ investments totaling $28M+ since 2008. 35 sponsoring congregations. Below-market loans to CDFIs and community organizations serving low-income communities.",
+      "url": "https://rcif.org"
+    },
+    {
+      "id": "azure-fund",
+      "name": "Azure Source Capital Fund",
+      "manager": "azure",
+      "assetClass": "private-debt",
+      "focus": "WASH / blended finance",
+      "openToNewInvestors": true,
+      "description": "Blended finance facility. $12.2M in total capital commitments (2023). Senior debt structure. Loans to small-scale water and sanitation utilities in El Salvador, Honduras, Guatemala. Anchor investors: CRS and IDB Lab. Managed by Total Impact Capital.",
+      "url": "https://www.azurewater.org"
+    }
+  ],
+  "connections": [
+    {
+      "from": "ciic",
+      "to": "francesco",
+      "label": "CIIC joined Francesco Collaborative in 2024",
+      "confidence": "verified"
+    },
+    {
+      "from": "francesco",
+      "to": "charism",
+      "label": "Garlow founded both",
+      "confidence": "verified"
+    },
+    {
+      "from": "faithinvest",
+      "to": "francesco",
+      "label": "Strategic partner",
+      "confidence": "verified"
+    },
+    {
+      "from": "cbis",
+      "to": "iccr",
+      "label": "Active member",
+      "confidence": "verified"
+    },
+    {
+      "from": "mercy",
+      "to": "iccr",
+      "label": "Active member",
+      "confidence": "verified"
+    },
+    {
+      "from": "mercy",
+      "to": "calvert",
+      "label": "Note investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "usccb",
+      "to": "ciic",
+      "label": "Guidelines framework",
+      "confidence": "verified"
+    },
+    {
+      "from": "usccb",
+      "to": "cbis",
+      "label": "Guidelines framework",
+      "confidence": "verified"
+    },
+    {
+      "from": "usccb",
+      "to": "koc",
+      "label": "Guidelines framework",
+      "confidence": "verified"
+    },
+    {
+      "from": "morgan-stanley",
+      "to": "dominican-climate",
+      "label": "Structured funds",
+      "confidence": "verified"
+    },
+    {
+      "from": "commonspirit",
+      "to": "dominican-climate",
+      "label": "Co-investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "ascension",
+      "to": "ciic",
+      "label": "CIIC member",
+      "confidence": "verified"
+    },
+    {
+      "from": "avemaria",
+      "to": "usccb",
+      "label": "Guidelines framework",
+      "confidence": "verified"
+    },
+    {
+      "from": "cath-etf",
+      "to": "usccb",
+      "label": "Guidelines framework",
+      "confidence": "verified"
+    },
+    {
+      "from": "faithinvest",
+      "to": "iccr",
+      "label": "Interfaith partner",
+      "confidence": "verified"
+    },
+    {
+      "from": "adriandominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "caldwell-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "sinsinawa-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "dominican-hope",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "maryknoll-sisters",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "dominican-peace",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "amityville-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "springfield-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "tacoma-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "houston-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "grandrapids-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "mission-sanjose-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "sanrafael-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "saratoga-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "blauvelt-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "sparkill-dominican",
+      "to": "dominican-climate",
+      "label": "Founding investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "adriandominican",
+      "to": "iccr",
+      "label": "ICCR member",
+      "confidence": "verified"
+    },
+    {
+      "from": "maryknoll-sisters",
+      "to": "iccr",
+      "label": "ICCR member",
+      "confidence": "verified"
+    },
+    {
+      "from": "mercy",
+      "to": "rcif",
+      "label": "Sr. Corinne directed MPF then founded RCIF",
+      "confidence": "verified"
+    },
+    {
+      "from": "rcif",
+      "to": "adriandominican",
+      "label": "Florek directed Adrian Dominican program",
+      "confidence": "verified"
+    },
+    {
+      "from": "ofn",
+      "to": "leviticus",
+      "label": "OFN member CDFI",
+      "confidence": "verified"
+    },
+    {
+      "from": "catholic-investment-services",
+      "to": "notre-dame",
+      "label": "Scott Malpass founded CIS after ND",
+      "confidence": "verified"
+    },
+    {
+      "from": "catholic-investment-services",
+      "to": "ciic",
+      "label": "CIS MD participated in LFI workshop",
+      "confidence": "verified"
+    },
+    {
+      "from": "iasj",
+      "to": "iccr",
+      "label": "Active partner",
+      "confidence": "verified"
+    },
+    {
+      "from": "releven",
+      "to": "francesco",
+      "label": "Named partner",
+      "confidence": "verified"
+    },
+    {
+      "from": "fsm",
+      "to": "ciic",
+      "label": "O'Shaughnessy co-founded CIIC",
+      "confidence": "verified"
+    },
+    {
+      "from": "fsm",
+      "to": "dominican-climate",
+      "label": "Former co-investor (liquidated Nov 2024)",
+      "confidence": "verified"
+    },
+    {
+      "from": "fsm",
+      "to": "iccr",
+      "label": "ICCR member",
+      "confidence": "verified"
+    },
+    {
+      "from": "mercy",
+      "to": "leviticus",
+      "label": "Co-founder; MPF investor since 1983",
+      "confidence": "verified"
+    },
+    {
+      "from": "oblate-ipit",
+      "to": "dominican-climate",
+      "label": "Co-investor (public fund)",
+      "confidence": "verified"
+    },
+    {
+      "from": "cua",
+      "to": "usccb",
+      "label": "Consortium policy aligned with USCCB guidelines",
+      "confidence": "verified"
+    },
+    {
+      "from": "georgetown",
+      "to": "ciic",
+      "label": "Hosted Catholic social thought & investing events",
+      "confidence": "verified"
+    },
+    {
+      "from": "loyola-chicago",
+      "to": "francesco",
+      "label": "Hosted first CST & Investing Summit (2024)",
+      "confidence": "verified"
+    },
+    {
+      "from": "crs",
+      "to": "ciic",
+      "label": "Pledge signatory",
+      "confidence": "verified"
+    },
+    {
+      "from": "crs",
+      "to": "usccb",
+      "label": "Official agency of bishops",
+      "confidence": "verified"
+    },
+    {
+      "from": "crs",
+      "to": "azure",
+      "label": "Co-founder & anchor investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "idb-lab",
+      "to": "azure",
+      "label": "Co-founder & anchor investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "dfc",
+      "to": "azure",
+      "label": "Longtime lender",
+      "confidence": "verified"
+    },
+    {
+      "from": "calvert",
+      "to": "azure",
+      "label": "Longtime lender",
+      "confidence": "verified"
+    },
+    {
+      "from": "mercy",
+      "to": "azure",
+      "label": "Longtime lender",
+      "confidence": "verified"
+    },
+    {
+      "from": "total-impact-capital",
+      "to": "azure",
+      "label": "Fund manager",
+      "confidence": "verified"
+    },
+    {
+      "from": "stone-family-foundation",
+      "to": "azure",
+      "label": "Lender (2023 round)",
+      "confidence": "verified"
+    },
+    {
+      "from": "osprey-foundation",
+      "to": "azure",
+      "label": "Lender (2023 round)",
+      "confidence": "verified"
+    },
+    {
+      "from": "felician-sisters",
+      "to": "azure",
+      "label": "Lender (2023 round)",
+      "confidence": "verified"
+    },
+    {
+      "from": "df-impact-capital",
+      "to": "azure",
+      "label": "Lender (2023 round)",
+      "confidence": "verified"
+    },
+    {
+      "from": "impact-assets",
+      "to": "azure",
+      "label": "Lender via DAF (2023 round)",
+      "confidence": "verified"
+    },
+    {
+      "from": "faithinvest",
+      "to": "faithdriveninvestor",
+      "label": "Overlapping networks",
+      "confidence": "verified"
+    },
+    {
+      "from": "fsm",
+      "to": "fadica",
+      "label": "FADICA member",
+      "confidence": "verified"
+    },
+    {
+      "from": "crs",
+      "to": "hilton-foundation",
+      "label": "Repeat grantee (Catholic Sisters / ECD)",
+      "confidence": "verified"
+    },
+    {
+      "from": "lcwr",
+      "to": "hilton-foundation",
+      "label": "Hilton grantee ($3.5M in 2021)",
+      "confidence": "verified"
+    },
+    {
+      "from": "maryknoll-sisters",
+      "to": "leviticus",
+      "label": "Investor",
+      "confidence": "verified"
+    },
+    {
+      "from": "sparkill-dominican",
+      "to": "leviticus",
+      "label": "Legacy Fund donor",
+      "confidence": "verified"
+    },
+    {
+      "from": "blauvelt-dominican",
+      "to": "leviticus",
+      "label": "Legacy Fund donor",
+      "confidence": "verified"
+    }
+  ]
+}
