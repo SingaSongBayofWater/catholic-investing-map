@@ -159,6 +159,14 @@
   #modal-close{position:absolute;top:16px;right:18px;font-size:18px;cursor:pointer;color:var(--text3);line-height:1;}
   #modal-close:hover{color:var(--text);}
   .modal-built{font-size:11px;color:var(--text3);margin-top:18px;padding-top:13px;border-top:1px solid var(--border);}
+  /* ── Mobile ── */
+  #mobile-banner{display:none;}
+  @media (max-width:768px){
+    #mobile-banner{display:block;background:#f5f0e8;color:#666;font-size:12px;text-align:center;padding:8px 16px;border-bottom:1px solid var(--border);flex-shrink:0;}
+    #panel{display:none;}
+    #resizer{display:none;}
+    #canvas{width:100%!important;}
+  }
 </style>
 </head>
 <body>
@@ -182,6 +190,8 @@
 </div>
 
 <!-- About modal removed — lives on Overview map only -->
+
+<div id="mobile-banner">Best experienced on a desktop browser — open on a laptop for the full interactive map.</div>
 
 <div id="main">
   <div id="canvas">
