@@ -2375,8 +2375,8 @@
       "confidence": "verified"
     },
     {
-      "source": "cabrini-world",
-      "target": "ciic",
+      "from": "cabrini-world",
+      "to": "ciic",
       "type": "member",
       "label": "Steering Committee"
     }
