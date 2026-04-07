@@ -2373,6 +2373,12 @@
       "to": "leviticus",
       "label": "Legacy Fund donor",
       "confidence": "verified"
-    }
+    },
+    {
+      "source": "cabrini-world",
+      "target": "ciic",
+      "type": "member",
+      "label": "Steering Committee"
+    },
   ]
 }
