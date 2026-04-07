@@ -7,6 +7,11 @@
   },
   "changelog": [
     {
+      "version": "0.16",
+      "date": "2026-04-07",
+      "notes": "Added Missionary Sisters of Sacred Heart of Jesus (Cabrini Sisters) as congregation entry. Updated Kayoko Lyons title and bio; added CIIC steering committee source."
+    },    
+    {
       "version": "0.15",
       "date": "2026-04-06",
       "notes": "Source hygiene, description review, connection audit. Added website sources to 7 meet-priority orgs (CRS, CIIC, Francesco, FDI, IDB Lab, DFC, Total Impact). Fixed RCIF source 1 label (was Mercy IS, is RCIF MIE listing). Trimmed internal language from Charism notes. Cleaned first-person/internal language from 4 crsConnection notes (CRS, Calvert, Mercy IS, RCIF). Removed 2 connections: LCWR->CIIC (inferred, not verified) and CRS->Morgan Stanley (unverified)."
@@ -206,15 +211,19 @@
       "orgs": [
         "cabrini-world"
       ],
-      "title": "Director of Investments, Cabrini World (Missionaries of Sacred Heart of Jesus)",
+      "title": "Director of Investments, Missionaries of Sacred Heart of Jesus",
       "linkedIn": "https://www.linkedin.com/in/kayoko-lyons-cfa-35898715",
-      "bio": "CFA with global experience in private debt and equity. Previously MicroVest Capital (Latin America), World Bank, MCE Social Capital. MA from SAIS (Johns Hopkins), BA Economics from UC Berkeley.",
+      "bio": "bio": "CFA. Director of Investments for the Cabrini Sisters since 2019. Previously MicroVest Capital Management and JPMorgan Chase. MA from SAIS (Johns Hopkins), BA Economics from UC Berkeley.",
       "priority": "meet",
       "linkedin": "https://www.linkedin.com/in/kayoko-lyons-cfa-35898715/",
       "sources": [
         {
           "label": "LinkedIn profile",
           "url": "https://www.linkedin.com/in/kayoko-lyons-cfa-35898715/"
+        },
+        {
+          "label": "CIIC Steering Committee",
+          "url": "https://www.catholicimpact.org/ciic-steering-committee"
         }
       ]
     },
@@ -1799,7 +1808,39 @@
           "url": "https://www.mercyhousing.org/partner-with-us/mercy-community-capital/"
         }
       ]
-    }
+    },
+    {
+      "id": "cabrini-world",
+      "name": "Missionary Sisters of the Sacred Heart of Jesus",
+      "shortName": "Cabrini Sisters",
+      "category": "congregation",
+      "founded": "1880",
+      "hq": "Fort Lee, NJ",
+      "description": "Catholic congregation founded by Saint Frances Xavier Cabrini, operating in 17 countries. Began building an impact portfolio around 2019 under Director of Investments Kayoko Lyons. Mission focus: women, children, migrants, and frail elders. ~90% of portfolio mission-aligned, primarily public equities and fixed income, with private investments in CDFIs, social enterprises, and private debt across emerging markets and US.",
+      "url": "https://www.cabriniworld.org/what-we-do/impact-investing/",
+      "keyPeople": [
+        {
+          "id": "kayoko-lyons",
+          "role": "Director of Investments"
+        }
+      ],
+      "crsConnection": {
+        "status": "indirect",
+        "note": "Kayoko Lyons is a CIIC Steering Committee member; CRS is a CIIC Pledge signatory."
+      },
+      "priority": null,
+      "focus": "private-markets",
+      "sources": [
+        {
+          "label": "Cabrini Sisters: Faith-Consistent Investing",
+          "url": "https://www.cabriniworld.org/what-we-do/impact-investing/"
+        },
+        {
+          "label": "FaithInvest: Cabrini Sisters impact investing journey",
+          "url": "https://www.faithinvest.org/cabrini-part-one"
+        }
+      ]
+}
   ],
   "funds": [
     {
